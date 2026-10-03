@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reserve Slot | Smart Parking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="booking-page">
+
+<header class="navbar">
+
+    <a class="brand" href="index.html">
+        <span class="logo">P</span>
+        Smart Parking
+    </a>
+
+    <nav>
+        <a href="parking-lots.html">Parking Lots</a>
+        <a href="my-bookings.html">My Bookings</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+
+<main class="page narrow booking-page-wrapper">
+
+    <!-- Back -->
+    <a href="parking-lots.html" class="back booking-back">
+        ← Back to parking lots
+    </a>
+
+
+    <!-- Booking Header -->
+    <div class="booking-heading">
+
+        <span class="eyebrow">
+            RESERVE YOUR SPACE
+        </span>
+
+        <h1>
+            Reserve a Parking Slot
+        </h1>
+
+        <p>
+            Choose your parking time and select an available slot.
+            Your space will be ready when you arrive.
+        </p>
+
+    </div>
+
+
+    <!-- Main Booking Card -->
+    <section id="bookingPanel" class="booking-panel booking-modern">
+
+
+        <!-- Selected Parking Lot -->
+        <div class="selected-lot-card">
+
+            <div class="selected-lot-icon">
+                🅿️
+            </div>
+
+            <div class="selected-lot-content">
+
+                <span class="selected-lot-label">
+                    SELECTED PARKING LOT
+                </span>
+
+                <div id="selectedLotInfo" class="selected-lot-info">
+
+                    <strong>Parking Lot</strong>
+
+                    <p>
+                        Loading parking lot...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Intro -->
+        <div class="booking-intro">
+
+            <div>
+                <h2>
+                    Choose your parking time
+                </h2>
+
+                <p class="muted">
+                    Select the date and duration of your parking reservation.
+                </p>
+            </div>
+
+            <div class="booking-step">
+                Step 1
+            </div>
+
+        </div>
+
+
+        <!-- Booking Time -->
+        <div class="booking-fields booking-time-fields">
+
+
+            <div class="booking-input-card">
+
+                <label for="bookDate">
+                    Date
+                </label>
+
+                <div class="input-with-icon">
+                    <span>📅</span>
+
+                    <input
+                        id="bookDate"
+                        type="date"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="booking-input-card">
+
+                <label for="bookStart">
+                    From
+                </label>
+
+                <div class="input-with-icon">
+                    <span>🕐</span>
+
+                    <input
+                        id="bookStart"
+                        type="time"
+                        value="10:00"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="booking-input-card">
+
+                <label for="bookEnd">
+                    To
+                </label>
+
+                <div class="input-with-icon">
+                    <span>🕐</span>
+
+                    <input
+                        id="bookEnd"
+                        type="time"
+                        value="13:00"
+                    >
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Check Availability -->
+        <div class="availability-action">
+
+            <button
+                class="btn primary availability-btn"
+                onclick="loadAvailableSlots()"
+            >
+                <span>🔍</span>
+                Check Available Slots
+            </button>
+
+            <span class="availability-hint">
+                We'll show slots available for your selected time.
+            </span>
+
+        </div>
+
+
+        <!-- Divider -->
+        <div class="booking-divider">
+            <span></span>
+            <strong>Choose your slot</strong>
+            <span></span>
+        </div>
+
+
+        <!-- Slot Selection Area -->
+
+        <div class="slot-selection-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    PARKING SPACE
+                </span>
+
+                <h2>
+                    Find your perfect slot
+                </h2>
+
+                <p class="muted">
+                    Filter slots by vehicle type or availability.
+                </p>
+
+            </div>
+
+            <div class="booking-step">
+                Step 2
+            </div>
+
+        </div>
+
+
+        <!-- Slot Filters -->
+
+        <div class="slot-filters booking-slot-filters">
+
+
+            <div class="slot-filter-card">
+
+                <label for="slotTypeFilter">
+                    Vehicle Type
+                </label>
+
+                <select
+                    id="slotTypeFilter"
+                    onchange="loadAvailableSlots()"
+                >
+
+                    <option value="">
+                        All Vehicles
+                    </option>
+
+                    <option value="CAR">
+                        🚗 Car
+                    </option>
+
+                    <option value="BIKE">
+                        🏍️ Bike
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="slot-filter-card">
+
+                <label for="slotStatusFilter">
+                    Status
+                </label>
+
+                <select
+                    id="slotStatusFilter"
+                    onchange="loadAvailableSlots()"
+                >
+
+                    <option value="">
+                        All Status
+                    </option>
+
+                    <option value="AVAILABLE">
+                        ✓ Available
+                    </option>
+
+                    <option value="MAINTENANCE">
+                        ⚙ Maintenance
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- Selected Slot Message -->
+
+        <div
+            id="selectedSlotMessage"
+            class="selected-slot-message"
+        >
+            No slot selected
+        </div>
+
+
+        <!-- Parking Map -->
+
+        <div class="parking-map booking-parking-map">
+
+            <div class="parking-map-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        LIVE PARKING MAP
+                    </span>
+
+                    <h3>
+                        Select an available parking space
+                    </h3>
+
+                </div>
+
+                <div class="map-indicator">
+                    ● Live
+                </div>
+
+            </div>
+
+
+            <!-- Entry -->
+
+            <div class="parking-entry">
+                🚗 ENTRY
+            </div>
+
+
+            <!-- Dynamic Slot Area -->
+
+            <div
+                id="slotArea"
+                class="parking-map-area"
+            ></div>
+
+
+            <!-- Legend -->
+
+            <div class="parking-legend booking-legend">
+
+                <div class="legend-item">
+
+                    <span class="legend-box legend-available"></span>
+
+                    Available
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-box legend-booked"></span>
+
+                    Booked
+
+                </div>
+
+
+                <div class="legend-item">
+
+                    <span class="legend-box legend-maintenance"></span>
+
+                    Maintenance
+
+                </div>
+
+            </div>
+
+
+            <!-- Exit -->
+
+            <div class="parking-exit">
+                EXIT 🚗
+            </div>
+
+        </div>
+
+
+        <!-- Booking Help -->
+
+        <div class="booking-help">
+
+            <div class="help-icon">
+                💡
+            </div>
+
+            <div>
+
+                <strong>
+                    How booking works
+                </strong>
+
+                <p>
+                    Choose your date and time, check availability,
+                    then click an available parking slot to select it.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

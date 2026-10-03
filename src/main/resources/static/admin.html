@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Smart Parking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="admin-page">
+
+
+<!-- =================================================
+     NAVBAR
+================================================= -->
+
+<header class="navbar">
+
+    <a class="brand" href="index.html">
+        <span class="logo">P</span>
+        <span>Smart Parking</span>
+    </a>
+
+
+    <nav>
+
+        <a href="parking-lots.html">
+            Parking Lots
+        </a>
+
+        <a href="my-bookings.html">
+            Bookings
+        </a>
+
+        <a href="#" onclick="logout()">
+            Logout
+        </a>
+
+    </nav>
+
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+
+<!-- =================================================
+     MAIN ADMIN DASHBOARD
+================================================= -->
+
+<main class="page admin-dashboard">
+
+
+    <!-- =================================================
+         PAGE HEADER
+    ================================================= -->
+
+    <div class="admin-welcome">
+
+        <div>
+
+            <span class="eyebrow">
+                ADMIN PANEL
+            </span>
+
+            <h1>
+                Parking Management
+            </h1>
+
+            <p>
+                Manage parking locations, slots and reservations
+                from one place.
+            </p>
+
+        </div>
+
+
+        <div class="admin-welcome-icon">
+            🅿️
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         DASHBOARD STATISTICS
+    ================================================= -->
+
+    <section class="admin-stats">
+
+
+        <div class="stat-card stat-blue">
+
+            <div class="stat-icon">
+                📍
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Parking Lots
+                </span>
+
+                <strong id="adminLots">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card stat-purple">
+
+            <div class="stat-icon">
+                🅿️
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Total Slots
+                </span>
+
+                <strong id="adminSlots">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card stat-green">
+
+            <div class="stat-icon">
+                ✓
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Available Slots
+                </span>
+
+                <strong id="adminAvailableSlots">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card stat-red">
+
+            <div class="stat-icon">
+                🚗
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Occupied Slots
+                </span>
+
+                <strong id="adminOccupiedSlots">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card stat-orange">
+
+            <div class="stat-icon">
+                🔧
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Maintenance
+                </span>
+
+                <strong id="adminMaintenanceSlots">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card stat-indigo">
+
+            <div class="stat-icon">
+                📋
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Total Bookings
+                </span>
+
+                <strong id="adminBookings">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card stat-teal">
+
+            <div class="stat-icon">
+                ✓
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Confirmed Bookings
+                </span>
+
+                <strong id="adminConfirmedBookings">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="stat-card stat-pink">
+
+            <div class="stat-icon">
+                ×
+            </div>
+
+            <div class="stat-content">
+
+                <span>
+                    Cancelled Bookings
+                </span>
+
+                <strong id="adminCancelledBookings">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         ADD PARKING LOT
+    ================================================= -->
+
+    <section class="admin-section admin-card">
+
+
+        <div class="section-top">
+
+            <div>
+
+                <span class="section-label">
+                    PARKING LOCATION
+                </span>
+
+                <h2>
+                    Add Parking Lot
+                </h2>
+
+                <p>
+                    Create a new parking location for users.
+                </p>
+
+            </div>
+
+
+            <div class="section-icon">
+                📍
+            </div>
+
+        </div>
+
+
+
+        <form
+            id="parkingLotForm"
+            class="booking-panel admin-form">
+
+
+            <div class="booking-fields">
+
+
+                <div class="input-group">
+
+                    <label for="lotName">
+                        Parking Lot Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="lotName"
+                        placeholder="Example: City Mall Parking"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label for="lotLocation">
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="lotLocation"
+                        placeholder="Example: College Road"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label for="lotSlots">
+                        Total Slots
+                    </label>
+
+                    <input
+                        type="number"
+                        id="lotSlots"
+                        placeholder="Example: 50"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn primary admin-action-btn">
+
+                <span>＋</span>
+                Add Parking Lot
+
+            </button>
+
+
+            <p
+                id="lotMessage"
+                class="message">
+            </p>
+
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MANAGE PARKING SLOTS
+    ================================================= -->
+
+    <section class="admin-section admin-card">
+
+
+        <div class="section-top">
+
+            <div>
+
+                <span class="section-label">
+                    SLOT MANAGEMENT
+                </span>
+
+                <h2>
+                    Manage Parking Slots
+                </h2>
+
+                <p>
+                    Add and maintain individual parking slots.
+                </p>
+
+            </div>
+
+
+            <div class="section-icon">
+                🅿️
+            </div>
+
+        </div>
+
+
+
+        <div class="booking-panel admin-form">
+
+
+            <div class="booking-fields">
+
+
+                <div class="input-group">
+
+                    <label for="slotLotSelect">
+                        Select Parking Lot
+                    </label>
+
+                    <select id="slotLotSelect">
+
+                        <option value="">
+                            Select parking lot
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label for="slotNumber">
+                        Slot Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="slotNumber"
+                        placeholder="Example: A7"
+                        required
+                    >
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label for="slotType">
+                        Slot Type
+                    </label>
+
+                    <select id="slotType">
+
+                        <option value="CAR">
+                            CAR
+                        </option>
+
+                        <option value="BIKE">
+                            BIKE
+                        </option>
+
+                        <option value="EV">
+                            EV
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                type="button"
+                class="btn primary admin-action-btn"
+                onclick="addParkingSlot()">
+
+                <span>＋</span>
+                Add Slot
+
+            </button>
+
+
+            <p
+                id="slotMessage"
+                class="message">
+            </p>
+
+
+        </div>
+
+
+
+        <div class="sub-section-heading">
+
+            <div>
+
+                <h3>
+                    Current Slots
+                </h3>
+
+                <p>
+                    Manage availability and maintenance status.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="adminSlotList"
+            class="admin-list">
+
+            <p class="muted">
+                Select a parking lot to view its slots.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         REGISTERED USERS
+    ================================================= -->
+
+    <section class="admin-section admin-card">
+
+
+        <div class="section-top">
+
+            <div>
+
+                <span class="section-label">
+                    USERS
+                </span>
+
+                <h2>
+                    Registered Users
+                </h2>
+
+                <p>
+                    View users registered in the parking system.
+                </p>
+
+            </div>
+
+
+            <div class="section-icon">
+                👥
+            </div>
+
+        </div>
+
+
+
+        <div
+            id="adminUserList"
+            class="admin-user-area">
+
+            <p class="muted">
+                Loading users...
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         PARKING LOTS
+    ================================================= -->
+
+    <section class="admin-section admin-card">
+
+
+        <div class="section-top">
+
+            <div>
+
+                <span class="section-label">
+                    LOCATIONS
+                </span>
+
+                <h2>
+                    Parking Lots
+                </h2>
+
+                <p>
+                    View and manage all parking locations.
+                </p>
+
+            </div>
+
+
+            <div class="section-icon">
+                🏢
+            </div>
+
+        </div>
+
+
+
+        <div
+            id="adminLotList"
+            class="admin-list">
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         RECENT BOOKINGS
+    ================================================= -->
+
+    <section class="admin-section admin-card">
+
+
+        <div class="section-top">
+
+            <div>
+
+                <span class="section-label">
+                    RESERVATIONS
+                </span>
+
+                <h2>
+                    Recent Bookings
+                </h2>
+
+                <p>
+                    Monitor recent parking reservations.
+                </p>
+
+            </div>
+
+
+            <div class="section-icon">
+                📋
+            </div>
+
+        </div>
+
+
+
+        <!-- FILTER BUTTONS -->
+
+        <div class="booking-filters admin-booking-filters">
+
+
+            <button
+                class="filter-btn active"
+                onclick="filterAdminBookings('ALL', this)">
+
+                All
+
+            </button>
+
+
+            <button
+                class="filter-btn"
+                onclick="filterAdminBookings('CONFIRMED', this)">
+
+                Confirmed
+
+            </button>
+
+
+            <button
+                class="filter-btn"
+                onclick="filterAdminBookings('CANCELLED', this)">
+
+                Cancelled
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- BOOKINGS -->
+
+        <div
+            id="adminBookingList"
+            class="table-wrap admin-table">
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

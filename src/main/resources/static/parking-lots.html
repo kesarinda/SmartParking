@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Parking Lots | Smart Parking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="parking-lots-page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a class="brand" href="index.html">
+            <span class="logo">P</span>
+            Smart Parking
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+
+            <a class="active" href="parking-lots.html">
+                Parking Lots
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+            <a class="nav-btn" href="register.html">
+                Register
+            </a>
+        </nav>
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="parking-lots-container">
+
+        <!-- PAGE HEADER -->
+        <section class="parking-lots-header">
+
+            <div class="parking-header-text">
+
+                <span class="eyebrow">
+                    FIND A PLACE TO PARK
+                </span>
+
+                <h1>
+                    Find Your Perfect
+                    <span>Parking Spot.</span>
+                </h1>
+
+                <p>
+                    Explore available parking lots, check available
+                    spaces and choose a convenient place to park.
+                </p>
+
+            </div>
+
+            <div class="parking-header-icon">
+                🅿️
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH -->
+        <section class="parking-search-card">
+
+            <div class="search-title">
+
+                <div class="search-icon">
+                    🔎
+                </div>
+
+                <div>
+                    <h2>Find a Parking Lot</h2>
+                    <p>
+                        Search by parking lot name or location.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="parking-search">
+
+                <span class="parking-search-icon">
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="lotSearch"
+                    placeholder="Search parking lot or location..."
+                    oninput="filterParkingLots()"
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- LOTS -->
+        <section class="parking-results">
+
+            <div class="parking-results-header">
+
+                <div>
+                    <h2>Available Parking Lots</h2>
+
+                    <p>
+                        Choose a parking lot to view its available slots.
+                    </p>
+                </div>
+
+                <div class="parking-status">
+                    <span></span>
+                    Live Availability
+                </div>
+
+            </div>
+
+
+            <!-- IMPORTANT:
+                 JavaScript inserts parking lots here.
+                 Keep this ID unchanged.
+            -->
+            <div id="lotList" class="lot-grid">
+
+                <div class="loading">
+                    Loading parking lots...
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="parking-lots-footer">
+
+        <div>
+            <strong>Smart Parking</strong>
+            <span> • Park Smarter. Live Better.</span>
+        </div>
+
+        <p>
+            © 2026 Smart Parking
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+

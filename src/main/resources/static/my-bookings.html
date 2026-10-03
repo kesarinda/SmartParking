@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings | Smart Parking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="my-bookings-page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a class="brand" href="index.html">
+            <span class="logo">P</span>
+            Smart Parking
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="parking-lots.html">Parking Lots</a>
+            <a class="active" href="my-bookings.html">My Bookings</a>
+            <a href="login.html">Login</a>
+        </nav>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="bookings-container">
+
+        <!-- PAGE HEADER -->
+        <section class="bookings-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    YOUR RESERVATIONS
+                </span>
+
+                <h1>
+                    My Bookings
+                </h1>
+
+                <p>
+                    View, track and manage all your parking reservations
+                    in one place.
+                </p>
+
+            </div>
+
+            <a href="parking-lots.html" class="booking-new-btn">
+                <span>＋</span>
+                New Booking
+            </a>
+
+        </section>
+
+
+        <!-- BOOKING CONTENT -->
+        <section class="bookings-section">
+
+            <div class="booking-section-top">
+
+                <div>
+                    <h2>Your Reservations</h2>
+                    <p>Here are your recent parking bookings.</p>
+                </div>
+
+                <div class="booking-icon">
+                    🅿️
+                </div>
+
+            </div>
+
+
+            <!-- IMPORTANT:
+                 JavaScript will insert booking cards here.
+                 Keep this ID unchanged.
+            -->
+            <div id="bookingList" class="booking-list"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bookings-footer">
+        <div>
+            <strong>Smart Parking</strong>
+            <span> • Park Smarter. Live Better.</span>
+        </div>
+
+        <p>
+            © 2026 Smart Parking
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+

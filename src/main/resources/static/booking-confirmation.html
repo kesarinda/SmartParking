@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Confirmed | Smart Parking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="confirmation-page">
+
+<header class="navbar">
+
+    <a class="brand" href="index.html">
+        <span class="logo">P</span>
+        Smart Parking
+    </a>
+
+    <nav>
+        <a href="parking-lots.html">Parking Lots</a>
+        <a href="my-bookings.html">My Bookings</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+
+<main class="page confirmation-page-wrapper">
+
+    <section class="confirmation-card">
+
+        <!-- Success Icon -->
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <span class="confirmation-eyebrow">
+            PARKING RESERVED SUCCESSFULLY
+        </span>
+
+        <h1>Booking Confirmed!</h1>
+
+        <p class="confirmation-subtitle">
+            Your parking slot has been successfully reserved.
+            Keep your booking details handy when you arrive.
+        </p>
+
+
+        <!-- Booking Details -->
+        <div class="confirmation-details-box">
+
+            <div class="details-header">
+                <div>
+                    <span class="details-label">BOOKING DETAILS</span>
+                    <h2>Your Reservation</h2>
+                </div>
+
+                <div class="booking-check">
+                    ✓
+                </div>
+            </div>
+
+            <div id="confirmationDetails">
+                <div class="confirmation-loading">
+                    Loading booking details...
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- QR CODE -->
+        <div id="qrCode" class="qr-code-box">
+
+            <div class="qr-header">
+
+                <div>
+                    <span class="details-label">
+                        QUICK VERIFICATION
+                    </span>
+
+                    <h3>Scan to Verify Booking</h3>
+                </div>
+
+                <span class="qr-icon">
+                    ▣
+                </span>
+
+            </div>
+
+            <p class="qr-description">
+                Show this QR code at the parking entrance
+                to quickly verify your reservation.
+            </p>
+
+            <div class="qr-image-wrapper">
+                <div id="qrImage"></div>
+            </div>
+
+            <p class="qr-note">
+                Keep this QR code available when you arrive.
+            </p>
+
+        </div>
+
+
+        <!-- Actions -->
+        <div class="confirmation-actions">
+
+            <a href="my-bookings.html" class="btn primary">
+                View My Bookings
+            </a>
+
+            <a href="parking-lots.html" class="btn secondary">
+                Book Another Slot
+            </a>
+
+        </div>
+
+
+        <!-- Bottom Message -->
+        <div class="confirmation-footer">
+
+            <span class="footer-check">✓</span>
+
+            <p>
+                Thank you for choosing <strong>Smart Parking</strong>.
+                Park smarter and enjoy your journey.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- QR Code Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- Your JavaScript -->
+<script src="script.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Smart Parking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page login-page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a class="brand" href="index.html">
+            <span class="logo">P</span>
+            Smart Parking
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="parking-lots.html">Parking Lots</a>
+            <a href="register.html">Register</a>
+        </nav>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
+
+
+    <!-- LOGIN AREA -->
+    <main class="login-container">
+
+        <!-- LEFT SIDE -->
+        <section class="login-intro">
+
+            <div class="login-p-icon">
+                P
+            </div>
+
+            <span class="eyebrow">
+                SMART • SIMPLE • SECURE
+            </span>
+
+            <h1>
+                Welcome back to
+                <span>Smart Parking.</span>
+            </h1>
+
+            <p>
+                Find your parking slot, manage your bookings,
+                and enjoy a smoother parking experience.
+            </p>
+
+            <div class="login-features">
+
+                <div class="login-feature">
+                    <span>🅿️</span>
+                    <div>
+                        <strong>Easy Parking</strong>
+                        <small>Find available parking slots quickly.</small>
+                    </div>
+                </div>
+
+                <div class="login-feature">
+                    <span>🔒</span>
+                    <div>
+                        <strong>Secure Account</strong>
+                        <small>Your booking information stays protected.</small>
+                    </div>
+                </div>
+
+                <div class="login-feature">
+                    <span>⚡</span>
+                    <div>
+                        <strong>Fast Booking</strong>
+                        <small>Reserve your slot without the hassle.</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGIN CARD -->
+        <section class="login-card">
+
+            <div class="login-card-top">
+
+                <div class="login-lock">
+                    🔐
+                </div>
+
+                <div>
+                    <h2>Welcome Back!</h2>
+                    <p>Login to continue to your account</p>
+                </div>
+
+            </div>
+
+
+            <form id="loginForm">
+
+                <!-- EMAIL -->
+                <div class="login-field">
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ✉
+                        </span>
+
+                        <input
+                            id="loginEmail"
+                            type="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="login-field">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            id="loginPassword"
+                            type="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+                <button
+                    class="btn primary full login-button"
+                    type="submit"
+                >
+                    Login
+                    <span>→</span>
+                </button>
+
+            </form>
+
+
+            <!-- LOGIN MESSAGE -->
+            <p
+                id="loginMessage"
+                class="message login-message"
+            ></p>
+
+
+            <!-- REGISTER -->
+            <div class="login-divider">
+                <span>or</span>
+            </div>
+
+            <p class="auth-bottom">
+                Don't have an account?
+                <a href="register.html">Create an account</a>
+            </p>
+
+
+            <div class="login-security">
+                🔒 Your information is handled securely
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="login-footer">
+        © 2026 Smart Parking • Park Smarter. Live Better.
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

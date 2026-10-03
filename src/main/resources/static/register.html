@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Register | Smart Parking</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="auth-page register-page">
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a class="brand" href="index.html">
+
+            <span class="logo">P</span>
+
+            Smart Parking
+
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="parking-lots.html">
+                Parking Lots
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </nav>
+
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+    </header>
+
+
+
+    <!-- ================= REGISTER AREA ================= -->
+
+    <main class="register-container">
+
+
+        <!-- LEFT SIDE -->
+
+        <section class="register-intro">
+
+            <div class="register-p-icon">
+                P
+            </div>
+
+
+            <span class="eyebrow">
+                JOIN SMART PARKING
+            </span>
+
+
+            <h1>
+                Park smarter.
+                <span>Travel better.</span>
+            </h1>
+
+
+            <p>
+                Create your account and enjoy a simpler,
+                faster and more convenient parking experience.
+            </p>
+
+
+            <!-- FEATURES -->
+
+            <div class="register-features">
+
+
+                <div class="register-feature">
+
+                    <span>
+                        🅿️
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Easy Parking
+                        </strong>
+
+                        <small>
+                            Find available parking slots easily.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="register-feature">
+
+                    <span>
+                        📅
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Simple Reservations
+                        </strong>
+
+                        <small>
+                            Reserve your parking slot in seconds.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="register-feature">
+
+                    <span>
+                        🔒
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Secure Account
+                        </strong>
+
+                        <small>
+                            Keep your booking information protected.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- REGISTER CARD -->
+
+        <section class="register-card">
+
+
+            <!-- CARD HEADER -->
+
+            <div class="register-card-header">
+
+                <div class="register-user-icon">
+                    👤
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Create Account
+                    </h2>
+
+                    <p>
+                        Join Smart Parking today
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- REGISTER FORM -->
+
+            <form id="registerForm">
+
+
+                <!-- NAME -->
+
+                <div class="register-field">
+
+                    <label for="regName">
+                        Full Name
+                    </label>
+
+
+                    <div class="register-input-wrapper">
+
+                        <span>
+                            👤
+                        </span>
+
+
+                        <input
+                            id="regName"
+                            type="text"
+                            required
+                            placeholder="Enter your full name"
+                            autocomplete="name">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="register-field">
+
+                    <label for="regEmail">
+                        Email Address
+                    </label>
+
+
+                    <div class="register-input-wrapper">
+
+                        <span>
+                            ✉
+                        </span>
+
+
+                        <input
+                            id="regEmail"
+                            type="email"
+                            required
+                            placeholder="Enter your email"
+                            autocomplete="email">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="register-field">
+
+                    <label for="regPassword">
+                        Password
+                    </label>
+
+
+                    <div class="register-input-wrapper">
+
+                        <span>
+                            🔒
+                        </span>
+
+
+                        <input
+                            id="regPassword"
+                            type="password"
+                            required
+                            placeholder="Enter your password"
+                            autocomplete="new-password">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div class="register-field">
+
+                    <label for="regPhone">
+                        Phone Number
+                    </label>
+
+
+                    <div class="register-input-wrapper">
+
+                        <span>
+                            📱
+                        </span>
+
+
+                        <input
+                            id="regPhone"
+                            type="tel"
+                            required
+                            placeholder="Enter your phone number"
+                            autocomplete="tel">
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REGISTER BUTTON -->
+
+                <button
+                    class="btn primary full register-button"
+                    type="submit">
+
+                    Create Account
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- MESSAGE -->
+
+            <p
+                id="registerMessage"
+                class="message register-message">
+            </p>
+
+
+
+            <!-- LOGIN -->
+
+            <div class="register-divider">
+                <span>or</span>
+            </div>
+
+
+            <p class="auth-bottom register-login">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+
+
+            <!-- SECURITY -->
+
+            <div class="register-security">
+
+                🔒 Your information is handled securely
+
+            </div>
+
+        </section>
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="register-footer">
+
+        <div>
+
+            <strong>
+                Smart Parking
+            </strong>
+
+            <span>
+                • Park Smarter. Live Better.
+            </span>
+
+        </div>
+
+
+        <p>
+            © 2026 Smart Parking
+        </p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

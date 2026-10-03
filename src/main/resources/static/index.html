@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Parking | Find Your Slot</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="home-page">
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar home-navbar">
+
+    <a class="brand" href="index.html">
+
+        <span class="logo">P</span>
+
+        <span>Smart Parking</span>
+
+    </a>
+
+
+    <nav>
+
+        <a class="active" href="index.html">
+            Home
+        </a>
+
+        <a href="parking-lots.html">
+            Parking Lots
+        </a>
+
+        <a href="#how">
+            How It Works
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+        <a class="nav-btn" href="register.html">
+            Register
+        </a>
+
+    </nav>
+
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="home-hero">
+
+
+    <!-- Decorative background -->
+
+    <div class="hero-glow glow-one"></div>
+
+    <div class="hero-glow glow-two"></div>
+
+    <div class="hero-grid-pattern"></div>
+
+
+
+    <!-- HERO CONTENT -->
+
+    <div class="home-hero-content">
+
+
+        <div class="hero-badge">
+
+            <span class="badge-dot"></span>
+
+            SMART PARKING SYSTEM
+
+        </div>
+
+
+        <h1>
+
+            Parking made
+
+            <span>
+                simple & smart.
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Find available parking slots,
+            reserve your space before you arrive,
+            and enjoy a stress-free parking experience.
+
+        </p>
+
+
+        <div class="home-hero-actions">
+
+            <a
+                href="parking-lots.html"
+                class="home-primary-btn">
+
+                Find Parking
+
+                <span>→</span>
+
+            </a>
+
+
+            <a
+                href="#how"
+                class="home-outline-btn">
+
+                How It Works
+
+            </a>
+
+        </div>
+
+
+        <!-- TRUST ITEMS -->
+
+        <div class="home-trust-row">
+
+
+            <div class="home-trust-item">
+
+                <div class="trust-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Easy Booking
+                    </strong>
+
+                    <span>
+                        Reserve in seconds
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="home-trust-item">
+
+                <div class="trust-icon">
+                    ⚡
+                </div>
+
+                <div>
+
+                    <strong>
+                        Real-time Slots
+                    </strong>
+
+                    <span>
+                        Check availability
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="home-trust-item">
+
+                <div class="trust-icon">
+                    🔒
+                </div>
+
+                <div>
+
+                    <strong>
+                        Secure
+                    </strong>
+
+                    <span>
+                        Safe reservations
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- HERO VISUAL -->
+
+    <div class="home-hero-visual">
+
+
+        <div class="hero-floating-card card-top">
+
+            <div class="floating-icon">
+                🅿️
+            </div>
+
+            <div>
+
+                <strong>
+                    Parking Available
+                </strong>
+
+                <span>
+                    Find your perfect slot
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-image-container">
+
+            <div class="image-glow"></div>
+
+            <img
+                src="car.jpg"
+                alt="Smart Parking"
+                class="home-parking-image">
+
+            <div class="image-overlay"></div>
+
+
+            <!-- Parking badge -->
+
+            <div class="image-parking-badge">
+
+                <span class="live-dot"></span>
+
+                LIVE PARKING
+
+            </div>
+
+
+            <!-- Bottom image card -->
+
+            <div class="image-info-card">
+
+                <div>
+
+                    <small>
+                        FIND YOUR
+                    </small>
+
+                    <strong>
+                        Perfect Parking Spot
+                    </strong>
+
+                </div>
+
+                <span>
+                    →
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-floating-card card-bottom">
+
+            <div class="mini-progress">
+
+                <span></span>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Quick Reservation
+                </strong>
+
+                <span>
+                    Park without waiting
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SEARCH PANEL
+===================================================== -->
+
+<section class="home-search-wrapper">
+
+
+    <div class="home-search-panel">
+
+
+        <div class="search-panel-heading">
+
+            <div class="search-panel-icon">
+                ⌕
+            </div>
+
+            <div>
+
+                <span>
+                    FIND YOUR PARKING
+                </span>
+
+                <h2>
+                    Where do you want to park?
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="home-search-fields">
+
+
+            <div class="home-search-field">
+
+                <label>
+                    Parking Location
+                </label>
+
+                <div class="search-input">
+
+                    <span>
+                        📍
+                    </span>
+
+                    <select id="homeLot">
+
+                        <option value="">
+                            Choose a parking lot
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="home-search-field">
+
+                <label>
+                    Date
+                </label>
+
+                <div class="search-input">
+
+                    <span>
+                        📅
+                    </span>
+
+                    <input
+                        id="homeDate"
+                        type="date">
+
+                </div>
+
+            </div>
+
+
+
+            <div class="home-search-field">
+
+                <label>
+                    From
+                </label>
+
+                <div class="search-input">
+
+                    <span>
+                        🕐
+                    </span>
+
+                    <input
+                        id="homeStart"
+                        type="time"
+                        value="10:00">
+
+                </div>
+
+            </div>
+
+
+
+            <div class="home-search-field">
+
+                <label>
+                    To
+                </label>
+
+                <div class="search-input">
+
+                    <span>
+                        🕐
+                    </span>
+
+                    <input
+                        id="homeEnd"
+                        type="time"
+                        value="13:00">
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="home-search-button"
+                onclick="checkHomeAvailability()">
+
+                Check Availability
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section
+    id="how"
+    class="home-how-section">
+
+
+    <div class="home-section-heading">
+
+        <span>
+            HOW IT WORKS
+        </span>
+
+        <h2>
+            Parking in three simple steps
+        </h2>
+
+        <p>
+            Everything you need to find,
+            reserve and use your parking space.
+        </p>
+
+    </div>
+
+
+
+    <div class="home-step-grid">
+
+
+        <a
+            href="parking-lots.html"
+            class="home-step-card">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <div class="step-icon blue">
+                📍
+            </div>
+
+            <h3>
+                Find a location
+            </h3>
+
+            <p>
+                Choose a parking lot
+                close to your destination.
+            </p>
+
+            <span>
+                Explore locations →
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="parking-lots.html"
+            class="home-step-card">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <div class="step-icon purple">
+                🅿️
+            </div>
+
+            <h3>
+                Choose your slot
+            </h3>
+
+            <p>
+                Check available slots
+                and select the one you need.
+            </p>
+
+            <span>
+                View parking slots →
+            </span>
+
+        </a>
+
+
+
+        <a
+            href="parking-lots.html"
+            class="home-step-card">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <div class="step-icon teal">
+                ✓
+            </div>
+
+            <h3>
+                Reserve & park
+            </h3>
+
+            <p>
+                Confirm your reservation
+                and park with confidence.
+            </p>
+
+            <span>
+                Start booking →
+            </span>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT / BENEFITS
+===================================================== -->
+
+<section
+    id="about"
+    class="home-benefits-section">
+
+
+    <div class="benefits-decoration"></div>
+
+
+    <div class="home-benefits-content">
+
+
+        <span class="benefits-label">
+            WHY SMART PARKING?
+        </span>
+
+
+        <h2>
+
+            Less searching.
+
+            <span>
+                More parking.
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Smart Parking brings parking,
+            reservations and availability
+            together in one simple experience.
+
+        </p>
+
+
+        <a
+            href="parking-lots.html"
+            class="benefits-button">
+
+            Explore Parking Lots
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+
+    <div class="benefits-grid">
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon blue-bg">
+                ⚡
+            </div>
+
+            <strong>
+                Fast
+            </strong>
+
+            <span>
+                Quick reservations
+            </span>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon purple-bg">
+                🕐
+            </div>
+
+            <strong>
+                24/7
+            </strong>
+
+            <span>
+                Parking availability
+            </span>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon teal-bg">
+                🔒
+            </div>
+
+            <strong>
+                Secure
+            </strong>
+
+            <span>
+                Protected bookings
+            </span>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon orange-bg">
+                📱
+            </div>
+
+            <strong>
+                Simple
+            </strong>
+
+            <span>
+                Easy to use
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="home-final-cta">
+
+
+    <div class="cta-decoration cta-one"></div>
+
+    <div class="cta-decoration cta-two"></div>
+
+
+    <div class="cta-content">
+
+        <span>
+            READY TO PARK?
+        </span>
+
+        <h2>
+            Your parking spot
+            is waiting.
+        </h2>
+
+        <p>
+            Find an available slot
+            and reserve it in just a few clicks.
+        </p>
+
+        <a
+            href="parking-lots.html"
+            class="final-cta-button">
+
+            Find My Parking
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="home-footer">
+
+
+    <div class="footer-brand">
+
+        <span class="logo">
+            P
+        </span>
+
+        <div>
+
+            <strong>
+                Smart Parking
+            </strong>
+
+            <span>
+                Park Smarter. Live Better.
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="parking-lots.html">
+            Parking Lots
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+        <a href="register.html">
+            Register
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 Smart Parking
+    </p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

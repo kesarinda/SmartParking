@@ -1,0 +1,478 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Payment | Smart Parking</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="payment-page">
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <a class="brand" href="index.html">
+
+        <span class="logo">P</span>
+
+        Smart Parking
+
+    </a>
+
+
+    <nav>
+
+        <a href="parking-lots.html">
+            Parking Lots
+        </a>
+
+        <a href="my-bookings.html">
+            My Bookings
+        </a>
+
+
+        <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            onclick="toggleDarkMode()">
+
+            🌙
+
+        </button>
+
+
+        <a href="#" onclick="logout()">
+            Logout
+        </a>
+
+    </nav>
+
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+
+<!-- ================= PAYMENT AREA ================= -->
+
+<main class="payment-container">
+
+
+    <!-- TOP INTRO -->
+
+    <section class="payment-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                SECURE PAYMENT
+            </span>
+
+
+            <h1>
+                Complete Your
+                <span>Payment.</span>
+            </h1>
+
+
+            <p>
+                Choose your preferred payment method
+                and complete your parking reservation securely.
+            </p>
+
+        </div>
+
+
+        <div class="payment-shield">
+            🔐
+        </div>
+
+    </section>
+
+
+
+    <!-- PAYMENT CARD -->
+
+    <section class="payment-card">
+
+
+        <!-- CARD HEADER -->
+
+        <div class="payment-card-header">
+
+            <div class="payment-card-icon">
+                💳
+            </div>
+
+            <div>
+
+                <h2>
+                    Payment Details
+                </h2>
+
+                <p>
+                    Review your booking before paying.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BOOKING DETAILS -->
+
+        <div class="payment-booking-box">
+
+            <div class="payment-box-title">
+
+                <span>
+                    🅿️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Your Booking
+                    </strong>
+
+                    <small>
+                        Reservation information
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div id="paymentBookingDetails">
+
+                Loading booking details...
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PAYMENT METHODS -->
+
+        <div class="payment-methods">
+
+            <div class="payment-method-heading">
+
+                <div>
+
+                    <h3>
+                        Select Payment Method
+                    </h3>
+
+                    <p>
+                        Choose how you would like to pay.
+                    </p>
+
+                </div>
+
+                <span>
+                    💰
+                </span>
+
+            </div>
+
+
+
+            <!-- CASH -->
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="CASH"
+                    checked>
+
+
+                <span class="payment-option-content">
+
+                    <span class="payment-option-icon cash-icon">
+                        💵
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            Cash
+                        </strong>
+
+                        <small>
+                            Pay at the parking location
+                        </small>
+
+                    </span>
+
+                </span>
+
+
+                <span class="payment-radio">
+                </span>
+
+            </label>
+
+
+
+            <!-- UPI -->
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="UPI">
+
+
+                <span class="payment-option-content">
+
+                    <span class="payment-option-icon upi-icon">
+                        📱
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            UPI
+                        </strong>
+
+                        <small>
+                            Google Pay / PhonePe / Paytm
+                        </small>
+
+                    </span>
+
+                </span>
+
+
+                <span class="payment-radio">
+                </span>
+
+            </label>
+
+
+
+            <!-- CARD -->
+
+            <label class="payment-option">
+
+                <input
+                    type="radio"
+                    name="paymentMethod"
+                    value="CARD">
+
+
+                <span class="payment-option-content">
+
+                    <span class="payment-option-icon card-icon">
+                        💳
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            Card
+                        </strong>
+
+                        <small>
+                            Credit / Debit Card
+                        </small>
+
+                    </span>
+
+                </span>
+
+
+                <span class="payment-radio">
+                </span>
+
+            </label>
+
+        </div>
+
+
+
+        <!-- PAYMENT MESSAGE -->
+
+        <div
+            id="paymentMessage"
+            class="message payment-message">
+        </div>
+
+
+
+        <!-- PAY BUTTON -->
+
+        <button
+            class="btn primary payment-btn"
+            onclick="processPayment()">
+
+            <span>
+                🔒
+            </span>
+
+            Pay Now
+
+            <strong>
+                →
+            </strong>
+
+        </button>
+
+
+
+        <!-- SECURITY -->
+
+        <div class="payment-security">
+
+            <span>
+                🔒
+            </span>
+
+            <div>
+
+                <strong>
+                    Secure Demo Payment
+                </strong>
+
+                <small>
+                    This is a demo payment system.
+                    No real money will be charged.
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PAYMENT STEPS -->
+
+    <section class="payment-steps">
+
+        <div class="payment-step">
+
+            <span>
+                1
+            </span>
+
+            <div>
+
+                <strong>
+                    Review Booking
+                </strong>
+
+                <small>
+                    Check your reservation details.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="payment-step">
+
+            <span>
+                2
+            </span>
+
+            <div>
+
+                <strong>
+                    Choose Payment
+                </strong>
+
+                <small>
+                    Select your preferred method.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="payment-step">
+
+            <span>
+                3
+            </span>
+
+            <div>
+
+                <strong>
+                    Confirm
+                </strong>
+
+                <small>
+                    Complete your reservation.
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="payment-footer">
+
+    <div>
+
+        <strong>
+            Smart Parking
+        </strong>
+
+        <span>
+            • Park Smarter. Live Better.
+        </span>
+
+    </div>
+
+    <p>
+        © 2026 Smart Parking
+    </p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
