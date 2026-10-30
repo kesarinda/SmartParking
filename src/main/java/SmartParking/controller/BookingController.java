@@ -15,6 +15,7 @@ import SmartParking.repository.UserRepository;
 import java.util.List;
 import java.util.Optional;
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Map;
 
 @RestController 
@@ -60,10 +61,14 @@ public class BookingController {
         ParkingSlot slot = parkingSlotRepository
         .findById(booking.getParkingSlot().getId())
         .orElse(null);
-        if(!slot.getStatus().equals("AVAILABLE")) {
-            return "Parking slot is not available";
+        
+        if (slot == null) {
+            return "Parking slot not found";
         }
         
+        if (!"AVAILABLE".equals(slot.getStatus())) {
+            return "Parking slot is not available";
+        }
         boolean alreadyBooked =
     bookingRepository.existsByParkingSlotIdAndStatusInAndStartTimeLessThanAndEndTimeGreaterThan(
         booking.getParkingSlot().getId(),
@@ -177,10 +182,13 @@ public String makePayment(
 
     existingBooking.setPaymentMethod(paymentMethod);
     existingBooking.setPaymentStatus("PAID");
-
-    bookingRepository.save(existingBooking);
-
-    return "Payment successful";
+    
+    Booking savedBooking = bookingRepository.save(existingBooking);
+    
+    return "Payment successful. ID: "
+        + savedBooking.getId()
+        + ", Method: " + savedBooking.getPaymentMethod()
+        + ", Status: " + savedBooking.getPaymentStatus();
 }
 
 @PutMapping("/{bookingId}/check-in")
@@ -215,10 +223,10 @@ public String checkIn(@PathVariable Long bookingId) {
 
     slot.setStatus("OCCUPIED");
     parkingSlotRepository.save(slot);
-
+    existingBooking.setActualCheckInTime(LocalDateTime.now());
     existingBooking.setStatus("CHECKED_IN");
+    
     bookingRepository.save(existingBooking);
-
     return "Vehicle checked in successfully";
 }
 
@@ -234,24 +242,43 @@ public String checkOut(@PathVariable Long bookingId) {
 
     Booking existingBooking = booking.get();
 
-    if (!existingBooking.getStatus().equals("CHECKED_IN")
-            && !existingBooking.getStatus().equals("OVERSTAYED")) {
-
+    if (!"CHECKED_IN".equals(existingBooking.getStatus())
+            && !"OVERSTAYED".equals(existingBooking.getStatus())) {
         return "Vehicle has not been checked in";
     }
 
+    // Get actual check-in time
+    LocalDateTime checkInTime =
+            existingBooking.getActualCheckInTime();
+
+    if (checkInTime == null) {
+        return "Actual check-in time not found";
+    }
+
+    // Get actual check-out time
+    LocalDateTime checkOutTime = LocalDateTime.now();
+
+    // Calculate actual parking duration
+    long minutes = Duration.between(
+            checkInTime, checkOutTime).toMinutes();
+
+    // Calculate parking fee (₹20 per hour)
+    double hours = Math.ceil(minutes / 60.0);
+    double finalAmount = hours * 20;
+
+    existingBooking.setAmount(finalAmount);
+    existingBooking.setActualCheckOutTime(checkOutTime);
     existingBooking.setStatus("COMPLETED");
 
-    ParkingSlot slot =
-            existingBooking.getParkingSlot();
-
+    // Make parking slot available
+    ParkingSlot slot = existingBooking.getParkingSlot();
     slot.setStatus("AVAILABLE");
 
     parkingSlotRepository.save(slot);
-
     bookingRepository.save(existingBooking);
 
-    return "Vehicle checked out successfully";
+    return "Vehicle checked out successfully. Final parking fee: ₹"
+            + finalAmount;
 }
 
 }

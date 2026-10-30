@@ -18,6 +18,8 @@ public class Booking {
 
     private String paymentMethod;
     private String paymentStatus;
+    private LocalDateTime actualCheckInTime;
+    private LocalDateTime actualCheckOutTime;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -95,5 +97,18 @@ public class Booking {
 
     public void setPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
+    }
+    public LocalDateTime getActualCheckInTime() {
+        return actualCheckInTime;
+    }
+    public void setActualCheckInTime(LocalDateTime actualCheckInTime) {
+        this.actualCheckInTime = actualCheckInTime;
+    }
+    
+    public LocalDateTime getActualCheckOutTime() {
+        return actualCheckOutTime;
+    }
+    public void setActualCheckOutTime(LocalDateTime actualCheckOutTime) {
+        this.actualCheckOutTime = actualCheckOutTime;
     }
 }
