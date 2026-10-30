@@ -64,12 +64,13 @@ public class BookingController {
             return "Parking slot is not available";
         }
         
-        boolean alreadyBooked = bookingRepository.existsByParkingSlotIdAndStatusAndStartTimeLessThanAndEndTimeGreaterThan(
-            booking.getParkingSlot().getId(),
-            "CONFIRMED",
-            booking.getEndTime(),
-            booking.getStartTime()
-        );
+        boolean alreadyBooked =
+    bookingRepository.existsByParkingSlotIdAndStatusInAndStartTimeLessThanAndEndTimeGreaterThan(
+        booking.getParkingSlot().getId(),
+        List.of("CONFIRMED", "CHECKED_IN", "OVERSTAYED"),
+        booking.getEndTime(),
+        booking.getStartTime()
+    );
 
         if(alreadyBooked){
             return "Parking slot is already booked for this time";

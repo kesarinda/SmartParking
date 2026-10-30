@@ -16,6 +16,12 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
             LocalDateTime startTime
     );
 
+    boolean existsByParkingSlotIdAndStatusInAndStartTimeLessThanAndEndTimeGreaterThan(
+        Long parkingSlotId,
+        List<String> statuses,
+        LocalDateTime endTime,
+        LocalDateTime startTime
+);
     List<Booking> findByParkingSlotParkingLotIdAndStatusAndStartTimeLessThanAndEndTimeGreaterThan(
             Long parkingLotId,
             String status,
