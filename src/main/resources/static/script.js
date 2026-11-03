@@ -2674,8 +2674,8 @@ async function processPayment(){
             console.log("Payment API response:", result);
 
             console.log("Response type:", typeof result);
-
-        if(result === "Payment successful"){
+            
+        if(typeof result === "string" && result.startsWith("Payment successful")){
 
             localStorage.setItem(
                 "paymentMethod",
