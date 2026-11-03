@@ -2670,6 +2670,10 @@ async function processPayment(){
                     })
                 }
             );
+            
+            console.log("Payment API response:", result);
+
+            console.log("Response type:", typeof result);
 
         if(result === "Payment successful"){
 
