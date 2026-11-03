@@ -17,6 +17,7 @@ import java.util.Optional;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Map;
+import org.springframework.transaction.annotation.Transactional;
 
 @RestController 
 @RequestMapping("/bookings")
@@ -33,7 +34,9 @@ public class BookingController {
         this.parkingSlotRepository = parkingSlotRepository;
     }
 
-    @PostMapping 
+    
+    @PostMapping
+    @Transactional
     public String createBooking(@RequestBody Booking booking){
 
         if(booking.getStartTime() == null || booking.getEndTime() == null){
@@ -59,7 +62,7 @@ public class BookingController {
         }
 
         ParkingSlot slot = parkingSlotRepository
-        .findById(booking.getParkingSlot().getId())
+        .findByIdForUpdate(booking.getParkingSlot().getId())
         .orElse(null);
         
         if (slot == null) {
