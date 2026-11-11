@@ -8,8 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Smart Parking | Find Your Slot</title>
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    
+    <!-- PWA settings -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Smart Parking">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -843,6 +851,16 @@
 
 
 <script src="script.js"></script>
+
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("/service-worker.js")
+                .then(() => console.log("SmartParking service worker registered"))
+                .catch(error => console.error("Service worker registration failed:", error));
+        });
+    }
+</script>
 
 </body>
 
