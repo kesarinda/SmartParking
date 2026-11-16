@@ -15992,3 +15992,27 @@ body.register-page .logo {
     background: #70c995 !important;
     color: #17211b !important;
 }
+
+/* DARK MODE - PAYMENT PAGE */
+
+body.dark-mode .payment-card,
+body.dark-mode .payment-summary,
+body.dark-mode .payment-option {
+    background: #1e1e1e;
+    color: #f1f1f1;
+    border-color: #444;
+}
+
+body.dark-mode .payment-option small {
+    color: #aaa;
+}
+
+body.dark-mode .payment-total {
+    border-top-color: #444;
+}
+
+body.dark-mode .payment-card h1,
+body.dark-mode .payment-card h2,
+body.dark-mode .payment-card h3 {
+    color: #ffffff;
+}
