@@ -975,22 +975,34 @@ footer{
     border-color:var(--green);
 }
 
-.parking-slot-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(auto-fill, minmax(240px, 1fr));
-    gap:20px;
-    margin-top:20px;
+/* REALISTIC PARKING SLOT SIZE */
+
+.parking-slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 130px));
+    gap: 14px;
+    margin-top: 20px;
 }
 
-.parking-slot-card{
-    border:1px solid #dbe5ef;
-    border-radius:12px;
-    padding:18px;
-    background:#fff;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,.05);
+.parking-slot-card {
+    width: 100%;
+    min-height: 115px;
+    box-sizing: border-box;
+    border: 1px solid #244767;
+    border-radius: 10px;
+    padding: 12px 8px;
+    background: #102a43;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
 }
+
+.parking-slot-card:hover {
+    border-color: #38bdf8;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
 
 .slot-number{
     font-size:26px;
@@ -11553,20 +11565,19 @@ body.dark-mode.confirmation-page .menu-btn {
     z-index: 2;
 }
 
-.hero-image-container {
+
+body.home-page .hero-image-container {
     position: relative;
-
-    width: min(530px, 100%);
-
-    border-radius: 30px;
-
+    width: 100%;
+    height: 440px;
+    transform: none;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
-
-    border: 1px solid rgba(255,255,255,.16);
-
-    box-shadow:
-        0 35px 80px rgba(0,0,0,.35);
+    border-radius: 24px;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    box-shadow: 0 0 45px rgba(0, 153, 255, 0.18);
 }
+
 
 .image-glow {
     position: absolute;
@@ -13020,4 +13031,2964 @@ body.dark-mode.home-page .benefits-button {
     .benefit-card {
         min-height: 130px;
     }
+}
+
+
+/* =========================================
+   SMART PARKING - DARK FUTURISTIC HOMEPAGE
+========================================= */
+
+body.home-page {
+    --blue: #38bdf8;
+    --dark: #020617;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --bg: #050b18;
+    --border: rgba(148, 163, 184, 0.16);
+    --shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+
+    background: #050b18;
+    color: #e2e8f0;
+}
+
+/* Navbar */
+.home-page .home-navbar {
+    background: rgba(5, 11, 24, 0.92);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+    backdrop-filter: blur(16px);
+}
+
+.home-page .brand {
+    color: #f8fafc;
+    font-size: 19px;
+}
+
+.home-page .logo {
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.45);
+}
+
+.home-page .navbar nav a {
+    color: #94a3b8;
+    transition: 0.3s;
+}
+
+.home-page .navbar nav a:hover,
+.home-page .navbar nav .active {
+    color: #38bdf8;
+}
+
+.home-page .navbar nav .nav-btn {
+    background: linear-gradient(135deg, #0284c7, #2563eb) !important;
+    color: white !important;
+    border-radius: 9px;
+}
+
+/* Hero */
+.home-page .home-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 80% 45%, rgba(14, 165, 233, 0.15), transparent 40%),
+        linear-gradient(135deg, #050b18, #0b1730);
+    color: #f8fafc;
+}
+
+.home-page .home-hero h1 {
+    color: #f8fafc;
+}
+
+.home-page .home-hero h1 span {
+    color: #38bdf8;
+}
+
+.home-page .home-hero-content p {
+    color: #a5b4c8;
+}
+
+.home-page .hero-badge {
+    color: #7dd3fc;
+    background: rgba(14, 165, 233, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.home-page .hero-glow {
+    opacity: 0.25;
+}
+
+/* Hero buttons */
+.home-page .home-primary-btn {
+    background: linear-gradient(135deg, #0284c7, #2563eb);
+    color: white;
+    box-shadow: 0 0 25px rgba(14, 165, 233, 0.25);
+}
+
+.home-page .home-outline-btn {
+    color: #e2e8f0;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Search panel */
+.home-page .home-search-wrapper {
+    background: #050b18;
+}
+
+.home-page .home-search-panel {
+    background: rgba(15, 27, 48, 0.95);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.home-page .search-panel-heading h2 {
+    color: #f8fafc;
+}
+
+.home-page .search-panel-heading span {
+    color: #38bdf8;
+}
+
+.home-page .home-search-field label {
+    color: #cbd5e1;
+}
+
+.home-page .search-input {
+    background: #081426;
+    border: 1px solid #263b56;
+    border-radius: 10px;
+}
+
+.home-page .search-input input,
+.home-page .search-input select {
+    background: transparent;
+    color: #e2e8f0;
+    border: none;
+    box-shadow: none;
+}
+
+.home-page .search-input option {
+    background: #0f1b30;
+    color: white;
+}
+
+.home-page .home-search-button {
+    background: linear-gradient(135deg, #0284c7, #2563eb);
+    color: white;
+}
+
+/* Sections */
+.home-page .home-how-section,
+.home-page .home-benefits-section {
+    background: #050b18;
+}
+
+.home-page .home-section-heading h2,
+.home-page .home-benefits-content h2 {
+    color: #f8fafc;
+}
+
+.home-page .home-section-heading p,
+.home-page .home-benefits-content p {
+    color: #94a3b8;
+}
+
+.home-page .home-section-heading > span,
+.home-page .benefits-label {
+    color: #38bdf8;
+}
+
+/* Step cards */
+.home-page .home-step-card,
+.home-page .benefit-card {
+    background: linear-gradient(145deg, #101e35, #0a1426);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    color: #e2e8f0;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.home-page .home-step-card:hover,
+.home-page .benefit-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(56, 189, 248, 0.55);
+    box-shadow: 0 15px 40px rgba(14, 165, 233, 0.12);
+}
+
+.home-page .home-step-card h3,
+.home-page .benefit-card strong {
+    color: #f8fafc;
+}
+
+.home-page .home-step-card p,
+.home-page .benefit-card span {
+    color: #94a3b8;
+}
+
+.home-page .home-step-card > span {
+    color: #38bdf8;
+}
+
+/* Benefits */
+.home-page .benefits-grid {
+    color: #e2e8f0;
+}
+
+/* Final CTA */
+.home-page .home-final-cta {
+    background:
+        radial-gradient(ellipse at center, rgba(14, 165, 233, 0.2), transparent 65%),
+        #0b1730;
+}
+
+.home-page .cta-content h2 {
+    color: #f8fafc;
+}
+
+.home-page .cta-content p {
+    color: #a5b4c8;
+}
+
+.home-page .final-cta-button {
+    background: linear-gradient(135deg, #0284c7, #2563eb);
+    color: white;
+}
+
+/* Footer */
+.home-page .home-footer {
+    background: #030814;
+    border-top: 1px solid rgba(56, 189, 248, 0.15);
+    color: #94a3b8;
+}
+
+.home-page .home-footer strong {
+    color: #f8fafc;
+}
+
+.home-page .footer-links a:hover {
+    color: #38bdf8;
+}
+
+/* Mobile navbar */
+@media (max-width: 650px) {
+    .home-page .navbar nav {
+        background: #0b1730;
+        border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .home-page .navbar nav a {
+        color: #e2e8f0;
+    }
+
+    .home-page .menu-btn {
+        color: #38bdf8;
+    }
+}
+
+/* ==========================================
+   SMART PARKING - DARK FUTURISTIC HOMEPAGE
+   ========================================== */
+
+body.home-page {
+    background: #020617;
+    color: #e2e8f0;
+}
+
+/* NAVBAR */
+body.home-page .home-navbar {
+    background: rgba(2, 6, 23, 0.95);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+}
+
+body.home-page .home-navbar .brand,
+body.home-page .home-navbar nav a {
+    color: #e2e8f0;
+}
+
+body.home-page .home-navbar nav a:hover,
+body.home-page .home-navbar nav a.active {
+    color: #38bdf8;
+}
+
+/* HERO */
+body.home-page .home-hero {
+    background:
+        radial-gradient(ellipse at 80% 40%, rgba(14, 165, 233, 0.16), transparent 40%),
+        radial-gradient(ellipse at 10% 80%, rgba(37, 99, 235, 0.12), transparent 40%),
+        linear-gradient(135deg, #020617, #0b1730, #082f49);
+    color: #f8fafc;
+}
+
+body.home-page .home-hero h1,
+body.home-page .home-hero h1 span {
+    color: #f8fafc;
+}
+
+body.home-page .home-hero h1 span {
+    color: #38bdf8;
+}
+
+body.home-page .home-hero-content p {
+    color: #a5b4c8;
+}
+
+body.home-page .hero-badge {
+    color: #7dd3fc;
+    background: rgba(14, 165, 233, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* HERO BUTTONS */
+body.home-page .home-primary-btn,
+body.home-page .home-search-button,
+body.home-page .benefits-button,
+body.home-page .final-cta-button {
+    background: linear-gradient(135deg, #0284c7, #2563eb);
+    color: white;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    box-shadow: 0 0 22px rgba(14, 165, 233, 0.2);
+}
+
+body.home-page .home-outline-btn {
+    background: rgba(15, 23, 42, 0.7);
+    color: #e0f2fe;
+    border: 1px solid #334155;
+}
+
+/* TRUST ITEMS */
+body.home-page .home-trust-item strong {
+    color: #f1f5f9;
+}
+
+body.home-page .home-trust-item span {
+    color: #94a3b8;
+}
+
+/* SEARCH PANEL */
+body.home-page .home-search-wrapper {
+    background: #020617;
+}
+
+body.home-page .home-search-panel {
+    background: #0f172a;
+    border: 1px solid #1e3a5f;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+body.home-page .search-panel-heading h2 {
+    color: #f8fafc;
+}
+
+body.home-page .search-panel-heading span,
+body.home-page .home-search-field label {
+    color: #94a3b8;
+}
+
+body.home-page .search-input {
+    background: #020617;
+    border: 1px solid #334155;
+    border-radius: 10px;
+}
+
+body.home-page .search-input input,
+body.home-page .search-input select {
+    background: transparent;
+    color: #f8fafc;
+}
+
+body.home-page .search-input input:focus,
+body.home-page .search-input select:focus {
+    outline: none;
+    border-color: #38bdf8;
+}
+
+/* SECTIONS */
+body.home-page .home-how-section {
+    background: #050b18;
+}
+
+body.home-page .home-section-heading h2,
+body.home-page .home-benefits-content h2 {
+    color: #f8fafc;
+}
+
+body.home-page .home-section-heading p,
+body.home-page .home-benefits-content p {
+    color: #94a3b8;
+}
+
+body.home-page .home-section-heading > span,
+body.home-page .benefits-label {
+    color: #38bdf8;
+}
+
+/* HOW IT WORKS CARDS */
+body.home-page .home-step-card,
+body.home-page .benefit-card {
+    background: linear-gradient(145deg, #0f172a, #111e35);
+    border: 1px solid #243b55;
+    color: #e2e8f0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+body.home-page .home-step-card h3,
+body.home-page .benefit-card strong {
+    color: #f8fafc;
+}
+
+body.home-page .home-step-card p,
+body.home-page .home-step-card > span,
+body.home-page .benefit-card > span {
+    color: #94a3b8;
+}
+
+body.home-page .home-step-card:hover,
+body.home-page .benefit-card:hover {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 25px rgba(14, 165, 233, 0.15);
+}
+
+/* BENEFITS */
+body.home-page .home-benefits-section {
+    background: #020617;
+}
+
+body.home-page .home-benefits-content h2 span {
+    color: #38bdf8;
+}
+
+/* FINAL CTA */
+body.home-page .home-final-cta {
+    background:
+        radial-gradient(ellipse at 50% 100%, rgba(14, 165, 233, 0.2), transparent 55%),
+        linear-gradient(135deg, #0b1730, #020617);
+    border-top: 1px solid #1e3a5f;
+}
+
+body.home-page .cta-content h2 {
+    color: #f8fafc;
+}
+
+body.home-page .cta-content p {
+    color: #94a3b8;
+}
+
+body.home-page .cta-content > span {
+    color: #38bdf8;
+}
+
+/* FOOTER */
+body.home-page .home-footer {
+    background: #01040d;
+    border-top: 1px solid #1e293b;
+    color: #94a3b8;
+}
+
+body.home-page .home-footer strong {
+    color: #f8fafc;
+}
+
+body.home-page .home-footer a {
+    color: #94a3b8;
+}
+
+body.home-page .home-footer a:hover {
+    color: #38bdf8;
+}
+
+/* MOBILE NAVBAR */
+@media (max-width: 768px) {
+    body.home-page .home-navbar nav {
+        background: #0f172a;
+        border: 1px solid #1e3a5f;
+    }
+
+    body.home-page .home-navbar nav a {
+        color: #e2e8f0;
+    }
+}
+/* DARK FUTURISTIC CARD POLISH */
+
+body.home-page .home-step-card .step-number {
+    color: #38bdf8;
+    opacity: 0.75;
+}
+
+body.home-page .home-step-card:hover {
+    transform: translateY(-8px);
+    border-color: #38bdf8;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+    transition: all 0.3s ease;
+}
+
+body.home-page .home-step-card {
+    transition: all 0.3s ease;
+}
+
+
+/* =========================================
+   SMART PARKING - CINEMATIC HERO DESIGN
+========================================= */
+
+body.home-page .home-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+    min-height: 680px;
+    padding: 90px 7%;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 45%, rgba(0, 153, 255, 0.16), transparent 38%),
+        linear-gradient(120deg, #030914, #07182b 65%, #020711);
+}
+
+body.home-page .home-hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+body.home-page .home-hero-content h1 {
+    color: #ffffff;
+    font-size: clamp(42px, 5vw, 66px);
+    line-height: 1.12;
+    font-weight: 800;
+    margin: 25px 0;
+}
+
+body.home-page .home-hero-content h1 span {
+    display: block;
+    color: #38bdf8;
+    text-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+}
+
+body.home-page .home-hero-content p {
+    color: #a9bdd2;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 490px;
+}
+
+body.home-page .home-hero-visual {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+body.home-page .hero-image-container {
+    position: relative;
+    width: 115%;
+    height: 560px;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(56, 189, 248, 0.45);
+    box-shadow: 0 0 60px rgba(0, 153, 255, 0.25);
+    transform: translateX(-5%);
+}
+
+body.home-page .home-hero-visual {
+    width: 100%;
+    min-width: 0;
+}
+
+body.home-page .home-parking-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+body.home-page .home-parking-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+body.home-page .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(2, 8, 20, 0.85),
+        transparent 55%
+    );
+}
+
+body.home-page .hero-floating-card {
+    position: absolute;
+    z-index: 4;
+    background: rgba(8, 25, 43, 0.92);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 14px;
+    padding: 15px 18px;
+    color: white;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+}
+
+body.home-page .card-top {
+    top: -25px;
+    left: -25px;
+}
+
+body.home-page .card-bottom {
+    bottom: -25px;
+    right: -20px;
+}
+
+body.home-page .hero-floating-card span {
+    display: block;
+    color: #9bb4cb;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+body.home-page .image-parking-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    color: white;
+    background: rgba(3, 15, 30, 0.8);
+    padding: 9px 14px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+body.home-page .image-info-card {
+    position: absolute;
+    bottom: 20px;
+    left: 22px;
+    right: 22px;
+    z-index: 2;
+    color: white;
+}
+
+body.home-page .image-info-card strong {
+    display: block;
+    font-size: 20px;
+}
+
+body.home-page .image-info-card small {
+    color: #38bdf8;
+}
+
+body.home-page .hero-glow {
+    pointer-events: none;
+}
+
+/* Mobile layout */
+
+@media (max-width: 850px) {
+    body.home-page .home-hero {
+        grid-template-columns: 1fr;
+        gap: 65px;
+        padding: 75px 6%;
+    }
+
+    body.home-page .hero-image-container {
+        height: 350px;
+    }
+
+    body.home-page .card-top {
+        left: 5px;
+    }
+
+    body.home-page .card-bottom {
+        right: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    body.home-page .home-hero-content h1 {
+        font-size: 42px;
+    }
+
+    body.home-page .hero-image-container {
+        height: 280px;
+    }
+}
+
+/* CINEMATIC PARKING IMAGE EFFECT */
+
+body.home-page .hero-image-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 170, 255, 0.12),
+            transparent 45%,
+            rgba(0, 40, 100, 0.2)
+        );
+}
+
+body.home-page .hero-image-container {
+    box-shadow:
+        0 0 30px rgba(0, 170, 255, 0.18),
+        0 0 80px rgba(0, 100, 255, 0.12);
+}
+
+
+/* FUTURISTIC HERO BUTTONS */
+
+body.home-page .home-hero-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+body.home-page .home-hero-actions a:first-child {
+    background: linear-gradient(135deg, #0284c7, #38bdf8);
+    color: white;
+    border: 1px solid #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+}
+
+body.home-page .home-hero-actions a:first-child:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+}
+
+body.home-page .home-hero-actions a:last-child {
+    background: rgba(8, 25, 43, 0.7);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.5);
+}
+
+body.home-page .home-hero-actions a:last-child:hover {
+    background: rgba(56, 189, 248, 0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.25);
+}
+
+/* FIX CAR IMAGE SIZE */
+
+body.home-page .hero-image-container {
+    width: 100% !important;
+    max-width: 500px;
+    height: 360px !important;
+    transform: none !important;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body.home-page .home-parking-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* DARK FUTURISTIC SEARCH PANEL */
+
+body.home-page .home-search-panel {
+    background: #08182b;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+body.home-page .home-search-panel label {
+    color: #dbeafe;
+    font-weight: 600;
+}
+
+/* Keep inputs readable and easy to use */
+body.home-page .home-search-panel input,
+body.home-page .home-search-panel select {
+    background: #ffffff;
+    color: #172b42;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+body.home-page .home-search-panel input:focus,
+body.home-page .home-search-panel select:focus {
+    border-color: #0ea5e9;
+    outline: 2px solid rgba(14, 165, 233, 0.2);
+}
+
+/* DARK INPUT FIELDS */
+
+body.home-page .home-search-panel input,
+body.home-page .home-search-panel select {
+    background-color: #102a43 !important;
+    color: #ffffff !important;
+    border: 1px solid #38bdf8 !important;
+    border-radius: 8px;
+}
+
+body.home-page .home-search-panel input::placeholder {
+    color: #a8bfd4;
+}
+
+body.home-page .home-search-panel input:focus,
+body.home-page .home-search-panel select:focus {
+    outline: none;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+}
+
+/* FUTURISTIC FIND PARKING BUTTON */
+
+body.home-page .home-search-panel button {
+    background: linear-gradient(135deg, #0284c7, #38bdf8);
+    color: #ffffff;
+    border: 1px solid #38bdf8;
+    border-radius: 10px;
+    padding: 13px 26px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+body.home-page .home-search-panel button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+}
+
+/* SAME COLOR FOR ALL SEARCH FIELDS */
+
+body.home-page .home-search-panel input,
+body.home-page .home-search-panel select {
+    background: #102a43 !important;
+    color: #ffffff !important;
+    border: 1px solid #24445f !important;
+    border-radius: 8px;
+}
+
+body.home-page .home-search-panel input:focus,
+body.home-page .home-search-panel select:focus {
+    background: #102a43 !important;
+    border-color: #38bdf8 !important;
+    outline: none;
+    box-shadow: none;
+}
+
+/* SEARCH FIELD LABELS */
+
+body.home-page .home-search-panel label {
+    color: #dbeafe;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 9px;
+    display: block;
+}
+
+/* SEARCH PANEL HEADING */
+
+body.home-page .home-search-panel h2 {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin-bottom: 22px;
+}
+
+/* DARK FUTURISTIC HOW IT WORKS SECTION */
+
+body.home-page .home-how-section {
+    background: linear-gradient(135deg, #030914, #07182b);
+    color: #ffffff;
+}
+
+body.home-page .home-how-section h2 {
+    color: #ffffff;
+}
+
+body.home-page .home-step-card {
+    background: linear-gradient(145deg, #0b2035, #102a43);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 16px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+body.home-page .home-step-card h3 {
+    color: #ffffff;
+}
+
+body.home-page .home-step-card p {
+    color: #a9bdd2;
+}
+
+body.home-page .home-step-card:hover {
+    transform: translateY(-7px);
+    border-color: #38bdf8;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.2);
+}
+
+/* HOW IT WORKS - LINK CARDS */
+
+body.home-page a.home-step-card {
+    background: linear-gradient(145deg, #0b2035, #102a43) !important;
+    border: 1px solid rgba(56, 189, 248, 0.3) !important;
+    border-radius: 16px;
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+body.home-page a.home-step-card h3 {
+    color: #ffffff !important;
+}
+
+body.home-page a.home-step-card p {
+    color: #a9bdd2 !important;
+}
+
+body.home-page a.home-step-card:hover {
+    transform: translateY(-7px);
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.2);
+}
+
+/* FINAL HOW IT WORKS CARD DESIGN */
+
+body.home-page a.home-step-card {
+    background: #0b2035 !important;
+    background-image: none !important;
+    border: 1px solid #164767 !important;
+    border-radius: 18px !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+    text-decoration: none !important;
+}
+
+body.home-page a.home-step-card h3 {
+    color: #ffffff !important;
+}
+
+body.home-page a.home-step-card p {
+    color: #b5c9dc !important;
+}
+
+body.home-page a.home-step-card:hover {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.2) !important;
+    transform: translateY(-6px);
+}
+
+
+/* HOW IT WORKS NUMBERS AND ICONS */
+
+body.home-page a.home-step-card .step-number {
+    color: #38bdf8 !important;
+    border-radius: 12px;
+}
+
+body.home-page a.home-step-card .step-icon {
+    color: #38bdf8 !important;
+}
+
+/* BENEFITS - MATCH HOW IT WORKS */
+
+body.home-page .home-benefits-section {
+    background: #0b2035 !important;
+    color: #ffffff !important;
+}
+
+body.home-page .home-benefits-section h2 {
+    color: #ffffff !important;
+}
+
+body.home-page .home-benefits-section p {
+    color: #b5c9dc !important;
+}
+
+/* PARKSMART BRAND LOGO */
+
+body.home-page .home-navbar span {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+body.home-page .home-navbar span:first-child {
+    color: #ffffff;
+}
+
+body.home-page .home-navbar span:last-child {
+    color: #38bdf8;
+}
+
+/* PARKSMART PARKING LOTS NAVBAR */
+
+body.parking-lots-page .navbar {
+    background: #08182b !important;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+body.parking-lots-page .brand {
+    color: #ffffff !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body.parking-lots-page .brand-name {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+body.parking-lots-page .brand-name span:first-child {
+    color: #ffffff;
+}
+
+body.parking-lots-page .brand-name span:last-child {
+    color: #38bdf8;
+}
+
+body.parking-lots-page .navbar nav a {
+    color: #dbeafe;
+}
+
+body.parking-lots-page .navbar nav a:hover,
+body.parking-lots-page .navbar nav a.active {
+    color: #38bdf8;
+}
+
+/* PARKING LOTS PAGE BACKGROUND */
+
+body.parking-lots-page {
+    background: #0b2035 !important;
+    color: #ffffff;
+}
+
+body.parking-lots-page .parking-lots-container {
+    background: transparent;
+}
+
+body.parking-lots-page .parking-lots-header h1 {
+    color: #ffffff;
+}
+
+body.parking-lots-page .parking-lots-header h1 span {
+    color: #38bdf8;
+}
+
+body.parking-lots-page .parking-lots-header p {
+    color: #b5c9dc;
+}
+
+body.parking-lots-page .eyebrow {
+    color: #38bdf8;
+}
+.parking-slot-card {
+    outline: 5px solid red !important;
+}
+/* REALISTIC COMPACT PARKING SLOTS */
+
+body.booking-page .parking-lanes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(85px, 100px));
+    justify-content: center;
+    gap: 12px;
+    padding: 25px 15px;
+    background: #102a43;
+    border: 1px solid #24445f;
+    border-radius: 12px;
+}
+
+body.booking-page .parking-slot {
+    width: 100%;
+    min-height: 125px;
+    padding: 10px 5px;
+    border: 2px solid #38bdf8;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: #123c50;
+    color: white;
+    text-align: center;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+body.booking-page .parking-slot .slot-number {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+body.booking-page .parking-slot .slot-type {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+body.booking-page .parking-slot.available {
+    border-color: #22c55e;
+    background: #123d38;
+}
+
+body.booking-page .parking-slot.booked {
+    border-color: #ef4444;
+    background: #49252d;
+    cursor: not-allowed;
+}
+
+body.booking-page .parking-slot.maintenance {
+    border-color: #f59e0b;
+    background: #49391e;
+    cursor: not-allowed;
+}
+
+/* PARKING AREA ROAD DESIGN */
+
+body.booking-page .parking-lanes {
+    position: relative;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 107px,
+            rgba(255,255,255,0.18) 108px,
+            rgba(255,255,255,0.18) 110px
+        ),
+        #102a43;
+    border: 2px solid #456078;
+    padding: 30px 15px;
+}
+
+body.booking-page .parking-slot {
+    position: relative;
+    border-radius: 5px;
+    border-top: 3px solid rgba(255,255,255,0.7);
+    border-bottom: 3px solid rgba(255,255,255,0.7);
+}
+
+body.booking-page .parking-slot.available:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(34,197,94,0.3);
+}
+/* REAL MALL PARKING GARAGE FLOOR */
+
+body.booking-page .parking-lanes {
+    background-color: #293746;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 49.5%,
+            rgba(255,255,255,0.12) 50%,
+            transparent 50.5%
+        );
+
+    border: 2px solid #64748b;
+    border-radius: 10px;
+    padding: 35px 20px;
+
+    box-shadow:
+        inset 0 0 35px rgba(0,0,0,0.35),
+        0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* PARKING BAY MARKINGS */
+
+body.booking-page .parking-slot {
+    border-radius: 4px;
+    border-left: 2px solid rgba(255,255,255,0.75);
+    border-right: 2px solid rgba(255,255,255,0.75);
+}
+
+/* GARAGE DRIVING AREA */
+
+body.booking-page .parking-entry,
+body.booking-page .parking-exit {
+    color: #38bdf8;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 15px;
+}
+/* MALL PARKING DRIVING AISLE */
+
+body.booking-page .parking-lanes {
+    position: relative;
+    background-color: #293746;
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 105px,
+            rgba(255,255,255,0.5) 106px,
+            transparent 108px
+        );
+}
+
+/* ROAD MARKING */
+
+body.booking-page .parking-lanes::after {
+    content: "⬆       DRIVE AISLE       ⬇";
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #facc15;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    padding: 18px 0;
+    margin-top: 15px;
+    border-top: 2px dashed rgba(255,255,255,0.5);
+}
+/* TWO-ROW MALL PARKING LAYOUT */
+
+body.booking-page .parking-lanes {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+    background: #293746;
+    border: 2px solid #64748b;
+    border-radius: 12px;
+}
+
+/* PARKING ROWS */
+
+body.booking-page .parking-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(85px, 100px));
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 5px;
+}
+
+/* CENTRAL DRIVING ROAD */
+
+body.booking-page .driving-aisle {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 12px;
+    background: #182635;
+    border-top: 2px dashed #facc15;
+    border-bottom: 2px dashed #facc15;
+    color: #facc15;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+body.booking-page .driving-aisle span {
+    font-size: 25px;
+}
+
+/* COMPACT PARKING LOT CARDS */
+
+body.parking-lots-page .lot-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+    justify-content: center;
+    gap: 22px;
+}
+
+body.parking-lots-page .lot-card {
+    max-width: 280px;
+    border-radius: 14px;
+}
+
+body.parking-lots-page .lot-image {
+    min-height: 115px;
+}
+
+body.parking-lots-page .mall-icon {
+    font-size: 36px;
+}
+
+body.parking-lots-page .lot-card-content {
+    padding: 15px;
+}
+
+body.parking-lots-page .lot-card h3 {
+    font-size: 19px;
+    margin: 8px 0;
+}
+
+body.parking-lots-page .lot-capacity {
+    margin: 12px 0;
+    padding: 9px;
+}
+
+body.parking-lots-page .lot-view-btn,
+body.parking-lots-page .lot-delete-btn {
+    padding: 10px;
+    font-size: 13px;
+}
+
+/* REALISTIC PARKING FACILITY CARDS */
+
+body.parking-lots-page .lot-card {
+    background: #f1f3f4;
+    color: #20262d;
+    border: 1px solid #cbd0d5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.22);
+    transition: 0.25s ease;
+}
+
+body.parking-lots-page .lot-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+    border-color: #9ca3af;
+}
+
+body.parking-lots-page .lot-image {
+    min-height: 115px;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 65px,
+            rgba(255,255,255,0.75) 66px 68px
+        ),
+        linear-gradient(135deg, #737b82, #343b42);
+}
+
+body.parking-lots-page .mall-tag {
+    color: #ffffff;
+    background: rgba(0,0,0,0.45);
+    padding: 6px 9px;
+    border-radius: 4px;
+}
+
+body.parking-lots-page .mall-icon {
+    color: white;
+    font-size: 34px;
+}
+
+body.parking-lots-page .lot-card-content {
+    padding: 15px;
+}
+
+body.parking-lots-page .lot-card-label {
+    color: #68737d;
+}
+
+body.parking-lots-page .lot-card h3 {
+    color: #20262d;
+}
+
+body.parking-lots-page .lot-meta {
+    color: #59636d;
+}
+
+body.parking-lots-page .lot-capacity {
+    background: #e1e5e8;
+    border: 1px solid #c4cbd1;
+    color: #4b5560;
+}
+
+body.parking-lots-page .lot-capacity strong {
+    color: #20262d;
+}
+
+body.parking-lots-page .lot-view-btn {
+    background: #303840;
+    color: #ffffff;
+    border: none;
+}
+
+body.parking-lots-page .lot-view-btn:hover {
+    background: #171c21;
+}
+
+body.parking-lots-page .lot-delete-btn {
+    background: #e5e7eb;
+    color: #991b1b;
+    border: 1px solid #d1d5db;
+}
+/* DARK REALISTIC PARKING CARDS */
+
+body.parking-lots-page .lot-card {
+    background: #292e32 !important;
+    color: #f5f5f5 !important;
+    border: 1px solid #555d63 !important;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+body.parking-lots-page .lot-card:hover {
+    transform: translateY(-5px);
+    border-color: #9ca3a8 !important;
+}
+
+body.parking-lots-page .lot-image {
+    min-height: 115px;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 65px,
+            rgba(255,255,255,0.65) 66px 68px
+        ),
+        linear-gradient(135deg, #656b70, #353a3e) !important;
+}
+
+body.parking-lots-page .mall-tag {
+    color: #ffffff !important;
+    background: rgba(0,0,0,0.55);
+    padding: 6px 9px;
+    border-radius: 4px;
+}
+
+body.parking-lots-page .lot-card-label {
+    color: #b7c0c5 !important;
+}
+
+body.parking-lots-page .lot-card h3 {
+    color: #ffffff !important;
+}
+
+body.parking-lots-page .lot-meta {
+    color: #c2c8cc !important;
+}
+
+body.parking-lots-page .lot-capacity {
+    background: #383f44 !important;
+    border: 1px solid #596168 !important;
+    color: #d5dadd !important;
+}
+
+body.parking-lots-page .lot-capacity strong {
+    color: #ffffff !important;
+}
+
+body.parking-lots-page .lot-view-btn {
+    background: #454d53 !important;
+    color: #ffffff !important;
+    border: 1px solid #68727a !important;
+}
+
+body.parking-lots-page .lot-view-btn:hover {
+    background: #59636a !important;
+}
+
+body.parking-lots-page .lot-delete-btn {
+    background: #493333 !important;
+    color: #ffcccc !important;
+    border: 1px solid #754747 !important;
+}
+
+/* REALISTIC MALL PARKING DESIGN */
+
+body.booking-page .parking-lanes {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 18px;
+    background: #3b4145 !important;
+    border: 2px solid #697176;
+    border-radius: 10px;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.3);
+}
+
+/* TWO PARKING ROWS */
+
+body.booking-page .parking-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(65px, 82px));
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 5px;
+}
+
+/* PARKING BAYS */
+
+body.booking-page .parking-slot {
+    min-height: 100px;
+    padding: 7px 3px;
+    border-radius: 4px;
+    border-top: 2px solid rgba(255,255,255,0.8);
+    border-bottom: 2px solid rgba(255,255,255,0.8);
+    color: white;
+    font-size: 12px;
+    box-shadow: none;
+    transform: none;
+}
+
+/* AVAILABLE */
+
+body.booking-page .parking-slot.available {
+    background: #28543e;
+    border-color: #70c995;
+}
+
+/* BOOKED */
+
+body.booking-page .parking-slot.booked {
+    background: #633b3b;
+    border-color: #d98787;
+}
+
+/* MAINTENANCE */
+
+body.booking-page .parking-slot.maintenance {
+    background: #68552e;
+    border-color: #e8c46c;
+}
+
+/* CENTRAL DRIVING ROAD */
+
+body.booking-page .driving-aisle {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #24292d;
+    border-top: 2px dashed #e5e5e5;
+    border-bottom: 2px dashed #e5e5e5;
+    color: #f1f1f1;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* REMOVE OLD EXTRA ROAD LABEL */
+
+body.booking-page .parking-lanes::after {
+    content: none !important;
+}
+/* PARKING SLOT VEHICLE DETAILS */
+
+body.booking-page .slot-car {
+    font-size: 25px;
+    line-height: 1;
+    margin: 5px 0;
+    filter: grayscale(0.3);
+}
+
+body.booking-page .parking-slot .slot-number {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+body.booking-page .parking-slot .slot-type {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #e5e7eb;
+}
+
+body.booking-page .parking-slot.available:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+/* REALISTIC GARAGE DRIVE AISLE */
+
+body.booking-page .driving-aisle {
+    min-height: 75px;
+    position: relative;
+    background: #202529;
+    border-top: 2px dashed #d6d6d6;
+    border-bottom: 2px dashed #d6d6d6;
+    color: #facc15;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+body.booking-page .driving-aisle span {
+    font-size: 24px;
+    color: #facc15;
+}
+
+/* REALISTIC GARAGE DRIVE AISLE */
+
+body.booking-page .driving-aisle {
+    min-height: 75px;
+    position: relative;
+    background: #202529;
+    border-top: 2px dashed #d6d6d6;
+    border-bottom: 2px dashed #d6d6d6;
+    color: #facc15;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+body.booking-page .driving-aisle span {
+    font-size: 24px;
+    color: #facc15;
+}
+/* BOOKING HEADING POLISH */
+
+body.booking-page .booking-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 35px auto 30px;
+}
+
+body.booking-page .booking-heading h1 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin: 12px 0;
+    letter-spacing: -1.2px;
+}
+
+body.booking-page .booking-heading p {
+    max-width: 580px;
+    margin: 12px auto 0;
+    color: #b8c2cc;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+body.booking-page .booking-heading .eyebrow {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+/* BOOKING INFO AND FORM CARDS */
+
+body.booking-page .selected-lot-card,
+body.booking-page .booking-input-card,
+body.booking-page .slot-filter-card {
+    background: #292e32 !important;
+    border: 1px solid #555d63;
+    border-radius: 12px;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.2);
+}
+
+body.booking-page .selected-lot-card {
+    padding: 18px;
+}
+
+body.booking-page .selected-lot-icon {
+    background: #3b4145;
+    border-radius: 12px;
+}
+
+body.booking-page .selected-lot-label {
+    color: #b7c0c5;
+}
+
+body.booking-page .booking-input-card label,
+body.booking-page .slot-filter-card label {
+    color: #e5e7eb;
+}
+
+/* PARKSMART PAYMENT PAGE */
+
+body.payment-page {
+    background: #24282b;
+    color: #f5f5f5;
+}
+
+body.payment-page .payment-heading {
+    max-width: 850px;
+    margin: 40px auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+body.payment-page .payment-heading h1 {
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+}
+
+body.payment-page .payment-heading h1 span {
+    color: #a7b3b9;
+}
+
+body.payment-page .payment-heading p {
+    color: #b8c2c8;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+body.payment-page .payment-shield {
+    font-size: 55px;
+    background: #292e32;
+    border: 1px solid #555d63;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+/* PAYMENT MAIN CARD */
+
+body.payment-page .payment-card {
+    max-width: 720px;
+    margin: 25px auto;
+    padding: 28px;
+    background: #292e32;
+    border: 1px solid #555d63;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+body.payment-page .payment-card-header h2 {
+    color: #fff;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+body.payment-page .payment-card-header p {
+    color: #b8c2c8;
+    font-size: 13px;
+}
+
+/* PAYMENT BOOKING DETAILS */
+
+body.payment-page .payment-booking-box {
+    background: #202528;
+    border: 1px solid #515a60;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 22px 0;
+}
+
+body.payment-page .payment-box-title strong {
+    color: #fff;
+    font-size: 16px;
+}
+
+body.payment-page .payment-box-title small {
+    color: #b8c2c8;
+}
+
+body.payment-page #paymentBookingDetails {
+    color: #e5e7eb;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+/* PAYMENT TEXT VISIBILITY */
+
+body.payment-page .payment-booking-box,
+body.payment-page #paymentBookingDetails {
+    color: #f5f5f5 !important;
+}
+
+body.payment-page #paymentBookingDetails strong,
+body.payment-page #paymentBookingDetails b {
+    color: #ffffff !important;
+}
+
+body.payment-page #paymentBookingDetails span,
+body.payment-page #paymentBookingDetails p,
+body.payment-page #paymentBookingDetails small {
+    color: #e2e8ec !important;
+}
+
+body.payment-page .payment-box-title strong {
+    color: #ffffff !important;
+}
+
+body.payment-page .payment-box-title small {
+    color: #d1d8dc !important;
+}
+/* PAYMENT METHOD OPTIONS */
+
+body.payment-page .payment-option {
+    background: #343a3e;
+    border: 1px solid #626b71;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 12px 0;
+    transition: 0.25s ease;
+}
+
+body.payment-page .payment-option:hover {
+    background: #40474c;
+    border-color: #aab4ba;
+}
+
+body.payment-page .payment-option strong {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+body.payment-page .payment-option small {
+    color: #d1d8dc;
+    font-size: 12px;
+}
+
+body.payment-page .payment-method-heading h3 {
+    color: #ffffff;
+}
+
+body.payment-page .payment-method-heading p {
+    color: #d1d8dc;
+}
+/* PAYMENT BUTTON */
+
+body.payment-page .payment-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 20px;
+    background: #59636a;
+    color: #ffffff;
+    border: 1px solid #879198;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    transition: 0.25s ease;
+}
+
+body.payment-page .payment-btn:hover {
+    background: #707b82;
+    transform: translateY(-2px);
+}
+
+/* PAYMENT SECURITY */
+
+body.payment-page .payment-security {
+    background: #202528;
+    border: 1px solid #515a60;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 18px;
+}
+
+body.payment-page .payment-security strong {
+    color: #ffffff;
+}
+
+body.payment-page .payment-security small {
+    color: #d1d8dc;
+    line-height: 1.6;
+}
+/* PAYMENT STEPS */
+
+body.payment-page .payment-step {
+    background: #292e32;
+    border: 1px solid #555d63;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+body.payment-page .payment-step > span {
+    background: #454d53;
+    color: #ffffff;
+    border: 1px solid #879198;
+    font-weight: 800;
+}
+
+body.payment-page .payment-step strong {
+    color: #ffffff;
+}
+
+body.payment-page .payment-step small {
+    color: #d1d8dc;
+}
+
+/* PAYMENT FOOTER */
+
+body.payment-page .payment-footer {
+    background: #1c2023;
+    border-top: 1px solid #4b5358;
+    color: #ffffff;
+}
+
+body.payment-page .payment-footer p,
+body.payment-page .payment-footer span {
+    color: #cbd2d6;
+}
+/* PARKSMART BOOKING CONFIRMATION PAGE */
+
+body.confirmation-page {
+    background: #24282b;
+    color: #f5f5f5;
+}
+
+body.confirmation-page .confirmation-card {
+    background: #292e32;
+    border: 1px solid #555d63;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.confirmation-page .confirmation-card h1 {
+    color: #ffffff;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+body.confirmation-page .confirmation-subtitle {
+    color: #d1d8dc;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+body.confirmation-page .confirmation-eyebrow {
+    color: #aeb9bf;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+/* CONFIRMATION BOOKING DETAILS */
+
+body.confirmation-page .confirmation-details-box {
+    background: #202528;
+    border: 1px solid #555d63;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+body.confirmation-page .details-header h2 {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+body.confirmation-page .details-label {
+    color: #c1cbd0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+body.confirmation-page #confirmationDetails {
+    color: #f1f3f4;
+    line-height: 1.8;
+}
+
+body.confirmation-page #confirmationDetails strong,
+body.confirmation-page #confirmationDetails b {
+    color: #ffffff;
+}
+
+body.confirmation-page .confirmation-loading {
+    color: #d1d8dc;
+}
+/* QR CODE VERIFICATION SECTION */
+
+body.confirmation-page .qr-code-box {
+    background: #202528;
+    border: 1px solid #555d63;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+body.confirmation-page .qr-header h3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+body.confirmation-page .qr-description,
+body.confirmation-page .qr-note {
+    color: #d1d8dc;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+body.confirmation-page .qr-icon {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+body.confirmation-page .qr-image-wrapper {
+    background: #ffffff;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    display: inline-block;
+}
+
+body.confirmation-page #qrImage {
+    background: #ffffff;
+}
+/* QR CODE VERIFICATION SECTION */
+
+body.confirmation-page .qr-code-box {
+    background: #202528;
+    border: 1px solid #555d63;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+body.confirmation-page .qr-header h3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+body.confirmation-page .qr-description,
+body.confirmation-page .qr-note {
+    color: #d1d8dc;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+body.confirmation-page .qr-icon {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+body.confirmation-page .qr-image-wrapper {
+    background: #ffffff;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    display: inline-block;
+}
+
+body.confirmation-page #qrImage {
+    background: #ffffff;
+}
+/* CONFIRMATION SUCCESS ICONS */
+
+body.confirmation-page .success-icon {
+    background: #28543e;
+    color: #ffffff;
+    border: 2px solid #70c995;
+    box-shadow: 0 0 18px rgba(112, 201, 149, 0.2);
+}
+
+body.confirmation-page .booking-check {
+    background: #28543e;
+    color: #ffffff;
+    border: 1px solid #70c995;
+}
+
+body.confirmation-page .footer-check {
+    color: #70c995;
+}
+/* CONFIRMATION ACTION BUTTONS */
+
+body.confirmation-page .confirmation-actions .btn.primary {
+    background: #59636a;
+    color: #ffffff;
+    border: 1px solid #879198;
+}
+
+body.confirmation-page .confirmation-actions .btn.secondary {
+    background: #343a3e;
+    color: #ffffff;
+    border: 1px solid #626b71;
+}
+
+body.confirmation-page .confirmation-actions .btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+}
+
+/* CONFIRMATION BOTTOM MESSAGE */
+
+body.confirmation-page .confirmation-footer {
+    background: #202528;
+    border: 1px solid #515a60;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+body.confirmation-page .confirmation-footer p {
+    color: #e5e7eb;
+    line-height: 1.7;
+}
+
+body.confirmation-page .confirmation-footer strong {
+    color: #ffffff;
+}
+
+/* PARKSMART MY BOOKINGS PAGE */
+
+body.my-bookings-page {
+    background: #24282b;
+    color: #f5f5f5;
+}
+
+/* PAGE HEADER */
+
+body.my-bookings-page .bookings-header h1 {
+    color: #ffffff;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+body.my-bookings-page .bookings-header p {
+    color: #d1d8dc;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+body.my-bookings-page .bookings-header .eyebrow {
+    color: #aeb9bf;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* NEW BOOKING BUTTON */
+
+body.my-bookings-page .booking-new-btn {
+    background: #59636a;
+    color: #ffffff;
+    border: 1px solid #879198;
+    border-radius: 9px;
+    padding: 13px 20px;
+    transition: 0.25s ease;
+}
+
+body.my-bookings-page .booking-new-btn:hover {
+    background: #707b82;
+    transform: translateY(-2px);
+}
+/* MY BOOKINGS SECTION */
+
+body.my-bookings-page .bookings-section {
+    background: #292e32;
+    border: 1px solid #555d63;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+body.my-bookings-page .booking-section-top h2 {
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+body.my-bookings-page .booking-section-top p {
+    color: #d1d8dc;
+    font-size: 14px;
+}
+
+body.my-bookings-page .booking-icon {
+    background: #3b4145;
+    border: 1px solid #626b71;
+    border-radius: 12px;
+    padding: 12px;
+}
+/* INDIVIDUAL BOOKING CARDS */
+
+body.my-bookings-page .booking-card {
+    background: #202528;
+    border: 1px solid #555d63;
+    border-radius: 13px;
+    padding: 22px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.25s ease;
+}
+
+body.my-bookings-page .booking-card:hover {
+    border-color: #879198;
+    transform: translateY(-3px);
+}
+
+/* BOOKING INFORMATION */
+
+body.my-bookings-page .booking-card h3 {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 800;
+    margin: 12px 0;
+}
+
+body.my-bookings-page .booking-card p {
+    color: #e2e8ec;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+body.my-bookings-page .booking-card strong {
+    color: #ffffff;
+}
+
+body.my-bookings-page .booking-card .muted {
+    color: #c1cbd0;
+}
+
+body.my-bookings-page .booking-card > div:first-child > strong {
+    color: #aeb9bf;
+    font-size: 13px;
+}
+/* BOOKING STATUS LABELS */
+
+body.my-bookings-page .booking-card .status {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+}
+
+/* CONFIRMED */
+
+body.my-bookings-page .booking-card .status.confirmed {
+    background: #28543e;
+    color: #a7f3c5;
+    border-color: #70c995;
+}
+
+/* CHECKED IN */
+
+body.my-bookings-page .booking-card .status.checked_in {
+    background: #344b60;
+    color: #c4e3ff;
+    border-color: #83b9e8;
+}
+
+/* CANCELLED */
+
+body.my-bookings-page .booking-card .status.cancelled {
+    background: #633b3b;
+    color: #ffd0d0;
+    border-color: #d98787;
+}
+
+/* COMPLETED */
+
+body.my-bookings-page .booking-card .status.completed {
+    background: #454d53;
+    color: #ffffff;
+    border-color: #879198;
+}
+/* BOOKING ACTION BUTTONS */
+
+body.my-bookings-page .booking-card .btn.primary {
+    background: #70c995;
+    color: #17251d;
+    border: 1px solid #8be0ad;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: 800;
+}
+
+body.my-bookings-page .booking-card .btn.secondary {
+    background: #454d53;
+    color: #ffffff;
+    border: 1px solid #879198;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: 800;
+}
+
+body.my-bookings-page .booking-card .btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+/* EMPTY BOOKINGS MESSAGE */
+
+body.my-bookings-page .booking-list .loading {
+    background: #202528;
+    color: #e5e7eb;
+    border: 1px solid #555d63;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+}
+
+body.my-bookings-page .booking-list .loading a {
+    color: #70c995 !important;
+    font-weight: 700;
+}
+
+/* MY BOOKINGS FOOTER */
+
+body.my-bookings-page .bookings-footer {
+    background: #1c2023;
+    border-top: 1px solid #4b5358;
+    color: #ffffff;
+}
+
+body.my-bookings-page .bookings-footer p,
+body.my-bookings-page .bookings-footer span {
+    color: #cbd2d6;
+}
+/* PARKSMART ADMIN DASHBOARD */
+
+body.admin-page {
+    background: #24282b;
+    color: #f5f5f5;
+}
+
+/* ADMIN WELCOME SECTION */
+
+body.admin-page .admin-welcome h1 {
+    color: #ffffff;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+body.admin-page .admin-welcome p {
+    color: #d1d8dc;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+body.admin-page .admin-welcome .eyebrow {
+    color: #70c995;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+body.admin-page .admin-welcome-icon {
+    background: #292e32;
+    border: 1px solid #555d63;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 35px;
+}
+/* ADMIN PAGE TEST */
+
+body.admin-page {
+    background: #24282b !important;
+    color: white !important;
+}
+
+body.admin-page h1 {
+    color: yellow !important;
+}
+
+body.admin-page {
+    background: #171a1c !important;
+    color: #ffffff !important;
+}
+
+body.admin-page h1 {
+    color: #ffffff !important;
+}
+
+/* ADMIN WELCOME SECTION */
+
+body.admin-page .admin-welcome h1 {
+    color: #ffffff !important;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+body.admin-page .admin-welcome p {
+    color: #c5cdd2 !important;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+body.admin-page .admin-welcome .eyebrow {
+    color: #70c995 !important;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+body.admin-page .admin-welcome-icon {
+    background: #292e32;
+    border: 1px solid #555d63;
+    border-radius: 15px;
+    padding: 20px;
+}
+/* ADMIN STATISTICS CARDS */
+
+body.admin-page .stat-card {
+    background: #292e32 !important;
+    border: 1px solid #555d63;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+body.admin-page .stat-content span {
+    color: #c5cdd2 !important;
+}
+
+body.admin-page .stat-content strong {
+    color: #ffffff !important;
+}
+
+body.admin-page .stat-icon {
+    background: #3b4145;
+    color: #ffffff;
+    border-radius: 10px;
+}
+/* ADMIN SECTION CARDS */
+
+body.admin-page .admin-card {
+    background: #292e32 !important;
+    border: 1px solid #555d63;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+body.admin-page .section-top h2,
+body.admin-page .sub-section-heading h3 {
+    color: #ffffff !important;
+}
+
+body.admin-page .section-top p {
+    color: #c5cdd2 !important;
+}
+
+body.admin-page .section-label {
+    color: #70c995 !important;
+}
+
+body.admin-page .section-icon {
+    background: #3b4145;
+    border: 1px solid #626b71;
+    color: #ffffff;
+}
+
+/* ADMIN FORM STYLING */
+
+body.admin-page .admin-form {
+    background: #202528 !important;
+    border: 1px solid #555d63;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+body.admin-page .admin-form label {
+    color: #f1f3f4 !important;
+}
+
+body.admin-page .admin-form input,
+body.admin-page .admin-form select {
+    background: #343a3e !important;
+    color: #ffffff !important;
+    border: 1px solid #697176 !important;
+}
+
+body.admin-page .admin-form input::placeholder {
+    color: #b8c2c8 !important;
+}
+/* ADMIN BUTTONS */
+
+body.admin-page .admin-action-btn,
+body.admin-page .btn.primary {
+    background: #70c995 !important;
+    color: #17211b !important;
+    border: none !important;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+body.admin-page .admin-action-btn:hover,
+body.admin-page .btn.primary:hover {
+    background: #55b77d !important;
+    transform: translateY(-2px);
+}
+
+body.admin-page .booking-filters button {
+    background: #343a3e;
+    color: #ffffff;
+    border: 1px solid #626b71;
+    border-radius: 7px;
+}
+
+body.admin-page .booking-filters button.active {
+    background: #70c995 !important;
+    color: #17211b !important;
+}
+/* ADMIN DATA DISPLAY AREAS */
+
+body.admin-page .admin-list,
+body.admin-page .admin-user-area,
+body.admin-page .admin-table {
+    background: #202528 !important;
+    border: 1px solid #555d63;
+    border-radius: 12px;
+    padding: 18px;
+    color: #ffffff !important;
+}
+
+body.admin-page .admin-list h3,
+body.admin-page .admin-user-area h3,
+body.admin-page .admin-table h3 {
+    color: #ffffff !important;
+}
+/* ADMIN BOOKINGS TABLE */
+
+body.admin-page .admin-table table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #ffffff;
+}
+
+body.admin-page .admin-table th {
+    background: #343a3e;
+    color: #70c995;
+    padding: 14px;
+    text-align: left;
+}
+
+body.admin-page .admin-table td {
+    color: #d1d8dc;
+    padding: 13px;
+    border-bottom: 1px solid #454d53;
+}
+
+body.admin-page .admin-table tr:hover {
+    background: #292e32;
+}
+/* ADMIN NAVBAR */
+
+body.admin-page .navbar {
+    background: #202528 !important;
+    border-bottom: 1px solid #454d53;
+}
+
+body.admin-page .navbar a {
+    color: #e5e9eb !important;
+}
+
+body.admin-page .navbar a:hover {
+    color: #70c995 !important;
+}
+
+body.admin-page .brand {
+    color: #70c995 !important;
+}
+
+/* ADMIN CANCEL BUTTON */
+
+body.admin-page .admin-table .delete-btn {
+    background: #713b40 !important;
+    color: #ffffff !important;
+    border: 1px solid #a6535b !important;
+    padding: 9px 18px;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+body.admin-page .admin-table .delete-btn:hover {
+    background: #a63f49 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(166, 63, 73, 0.3);
+}
+/* =================================
+   SMART PARKING LOGIN PAGE
+================================= */
+
+body.login-page {
+    background: #171a1c !important;
+    color: #ffffff;
+}
+
+/* LOGIN MAIN CONTAINER */
+
+body.login-page .login-container {
+    background: transparent;
+}
+
+/* LEFT INTRO SECTION */
+
+body.login-page .login-intro h1 {
+    color: #ffffff !important;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+}
+
+body.login-page .login-intro h1 span {
+    color: #70c995 !important;
+}
+
+body.login-page .login-intro p {
+    color: #c5cdd2 !important;
+    line-height: 1.8;
+}
+
+body.login-page .login-intro .eyebrow {
+    color: #70c995 !important;
+    letter-spacing: 2px;
+}
+/* LOGIN CARD */
+
+body.login-page .login-card {
+    background: #292e32 !important;
+    border: 1px solid #555d63;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    padding: 32px;
+}
+
+body.login-page .login-card-top h2 {
+    color: #ffffff !important;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+body.login-page .login-card-top p {
+    color: #c5cdd2 !important;
+}
+
+body.login-page .login-lock {
+    background: #343a3e;
+    border: 1px solid #626b71;
+    border-radius: 12px;
+}
+
+body.login-page .login-field label {
+    color: #f1f3f4 !important;
+}
+/* LOGIN INPUT FIELDS */
+
+body.login-page .input-wrapper {
+    background: #202528 !important;
+    border: 1px solid #626b71 !important;
+    border-radius: 9px;
+    transition: 0.3s ease;
+}
+
+body.login-page .input-wrapper:focus-within {
+    border-color: #70c995 !important;
+    box-shadow: 0 0 0 3px rgba(112, 201, 149, 0.12);
+}
+
+body.login-page .input-wrapper input {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+body.login-page .input-wrapper input::placeholder {
+    color: #aeb8bd !important;
+}
+
+body.login-page .input-icon {
+    color: #70c995 !important;
+}
+/* LOGIN BUTTON */
+
+body.login-page .login-button {
+    background: #70c995 !important;
+    color: #17211b !important;
+    border: none !important;
+    border-radius: 9px;
+    font-weight: 800;
+    padding: 14px;
+    transition: 0.3s ease;
+}
+
+body.login-page .login-button:hover {
+    background: #55b77d !important;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(112, 201, 149, 0.2);
+}
+
+body.login-page .login-button span {
+    color: #17211b !important;
+}
+/* LOGIN FEATURE CARDS */
+
+body.login-page .login-feature {
+    background: #292e32 !important;
+    border: 1px solid #454d53;
+    border-radius: 12px;
+    padding: 16px;
+    transition: 0.3s ease;
+}
+
+body.login-page .login-feature:hover {
+    background: #343a3e !important;
+    border-color: #70c995;
+    transform: translateX(5px);
+}
+
+body.login-page .login-feature strong {
+    color: #ffffff !important;
+}
+
+body.login-page .login-feature small {
+    color: #c5cdd2 !important;
+}
+
+body.login-page .login-feature > span {
+    color: #70c995;
+}
+/* LOGIN LINKS AND FOOTER */
+
+body.login-page .auth-bottom {
+    color: #c5cdd2 !important;
+}
+
+body.login-page .auth-bottom a {
+    color: #70c995 !important;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+body.login-page .auth-bottom a:hover {
+    color: #55b77d !important;
+    text-decoration: underline;
+}
+
+body.login-page .login-divider {
+    color: #aeb8bd !important;
+}
+
+body.login-page .login-divider span {
+    background: #292e32;
+    padding: 0 10px;
+}
+
+body.login-page .login-security {
+    background: #202528;
+    color: #c5cdd2 !important;
+    border: 1px solid #454d53;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+body.login-page .login-footer {
+    background: #171a1c !important;
+    color: #aeb8bd !important;
+    border-top: 1px solid #343a3e;
+}
+/* LOGIN NAVBAR */
+
+body.login-page .navbar {
+    background: #202528 !important;
+    border-bottom: 1px solid #454d53;
+}
+
+body.login-page .navbar a {
+    color: #e5e9eb !important;
+}
+
+body.login-page .navbar a:hover {
+    color: #70c995 !important;
+}
+
+body.login-page .brand {
+    color: #70c995 !important;
+}
+
+body.login-page .logo {
+    background: #70c995 !important;
+    color: #17211b !important;
+}
+/* =================================
+   SMART PARKING REGISTER PAGE
+================================= */
+
+body.register-page {
+    background: #171a1c !important;
+    color: #ffffff;
+}
+
+/* REGISTER INTRO */
+
+body.register-page .register-intro h1 {
+    color: #ffffff !important;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+}
+
+body.register-page .register-intro h1 span {
+    color: #70c995 !important;
+}
+
+body.register-page .register-intro p {
+    color: #c5cdd2 !important;
+    line-height: 1.8;
+}
+
+body.register-page .register-intro .eyebrow {
+    color: #70c995 !important;
+    letter-spacing: 2px;
+}
+
+body.register-page .register-p-icon {
+    background: #292e32;
+    color: #70c995;
+    border: 1px solid #555d63;
+    border-radius: 15px;
+}
+/* REGISTER CARD */
+
+body.register-page .register-card {
+    background: #292e32 !important;
+    border: 1px solid #555d63;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    padding: 32px;
+}
+
+body.register-page .register-card-header h2 {
+    color: #ffffff !important;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+body.register-page .register-card-header p {
+    color: #c5cdd2 !important;
+}
+
+body.register-page .register-user-icon {
+    background: #343a3e;
+    border: 1px solid #626b71;
+    border-radius: 12px;
+}
+
+body.register-page .register-field label {
+    color: #f1f3f4 !important;
+}
+/* REGISTER INPUT FIELDS */
+
+body.register-page .register-input-wrapper {
+    background: #202528 !important;
+    border: 1px solid #626b71 !important;
+    border-radius: 9px;
+    transition: 0.3s ease;
+}
+
+body.register-page .register-input-wrapper:focus-within {
+    border-color: #70c995 !important;
+    box-shadow: 0 0 0 3px rgba(112, 201, 149, 0.12);
+}
+
+body.register-page .register-input-wrapper input {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+body.register-page .register-input-wrapper input::placeholder {
+    color: #aeb8bd !important;
+}
+
+body.register-page .register-input-wrapper > span {
+    color: #70c995 !important;
+}
+/* REGISTER BUTTON */
+
+body.register-page .register-button {
+    background: #70c995 !important;
+    color: #17211b !important;
+    border: 0 !important;
+    border-radius: 9px;
+    font-weight: 800;
+    padding: 14px;
+    transition: 0.3s ease;
+}
+
+body.register-page .register-button:hover {
+    background: #55b77d !important;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(112, 201, 149, 0.2);
+}
+
+body.register-page .register-button span {
+    color: #17211b !important;
+}
+/* REGISTER FEATURE CARDS */
+
+body.register-page .register-feature {
+    background: #292e32 !important;
+    border: 1px solid #454d53;
+    border-radius: 12px;
+    padding: 16px;
+    transition: 0.3s ease;
+}
+
+body.register-page .register-feature:hover {
+    background: #343a3e !important;
+    border-color: #70c995;
+    transform: translateX(5px);
+}
+
+body.register-page .register-feature strong {
+    color: #ffffff !important;
+}
+
+body.register-page .register-feature small {
+    color: #c5cdd2 !important;
+}
+
+body.register-page .register-feature > span {
+    color: #70c995 !important;
+}
+/* REGISTER LINKS AND FOOTER */
+
+body.register-page .auth-bottom {
+    color: #c5cdd2 !important;
+}
+
+body.register-page .auth-bottom a {
+    color: #70c995 !important;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+body.register-page .auth-bottom a:hover {
+    color: #55b77d !important;
+    text-decoration: underline;
+}
+
+body.register-page .register-divider {
+    color: #aeb8bd !important;
+}
+
+body.register-page .register-divider span {
+    background: #292e32;
+    padding: 0 10px;
+}
+
+body.register-page .register-security {
+    background: #202528;
+    color: #c5cdd2 !important;
+    border: 1px solid #454d53;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+body.register-page .register-footer {
+    background: #171a1c !important;
+    color: #aeb8bd !important;
+    border-top: 1px solid #343a3e;
+}
+
+body.register-page .register-footer strong {
+    color: #70c995 !important;
+}
+/* REGISTER NAVBAR */
+
+body.register-page .navbar {
+    background: #202528 !important;
+    border-bottom: 1px solid #454d53;
+}
+
+body.register-page .navbar a {
+    color: #e5e9eb !important;
+}
+
+body.register-page .navbar a:hover {
+    color: #70c995 !important;
+}
+
+body.register-page .brand {
+    color: #70c995 !important;
+}
+
+body.register-page .logo {
+    background: #70c995 !important;
+    color: #17211b !important;
 }

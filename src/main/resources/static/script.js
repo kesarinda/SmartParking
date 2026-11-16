@@ -227,38 +227,52 @@ function displayParkingLots(lots) {
         lotHTML += `
             <article class="lot-card">
 
-                <div class="lot-image">🅿️</div>
+    <div class="lot-image">
+        <div class="lot-image-overlay">
+            <span class="mall-tag">PARKSMART FACILITY</span>
+            <span class="mall-icon">🅿️</span>
+        </div>
+    </div>
 
-                <h3>${escapeHtml(l.name)}</h3>
+    <div class="lot-card-content">
 
-                <p class="lot-meta">
-                    📍 ${escapeHtml(l.location)}
-                    <br>
-                    Capacity: ${l.slotCount} slots
-                </p>
+        <span class="lot-card-label">PARKING FACILITY</span>
 
-                <button
-                    class="btn primary"
-                    onclick="openLot(${l.id})">
-                    View Slots
-                </button>
+        <h3>${escapeHtml(l.name)}</h3>
 
-                ${
-                    getUser()?.role === "ADMIN"
-                    ?
-                    `
-                    <button
-                        class="btn"
-                        onclick="deleteParkingLot(${l.id})">
-                        Delete Parking Lot
-                    </button>
-                    `
-                    :
-                    ""
-                }
+        <p class="lot-meta">
+            <span>📍</span>
+            ${escapeHtml(l.location)}
+        </p>
 
-            </article>
-        `;
+        <div class="lot-capacity">
+            <span>Parking Capacity</span>
+            <strong>${slots.length} Slots</strong>
+        </div>
+
+        <button
+            class="btn primary lot-view-btn"
+            onclick="openLot(${l.id})">
+            View Parking Slots →
+        </button>
+
+        ${
+            getUser()?.role === "ADMIN"
+            ?
+            `
+            <button
+                class="btn lot-delete-btn"
+                onclick="deleteParkingLot(${l.id})">
+                Delete Parking Lot
+            </button>
+            `
+            :
+            ""
+        }
+
+    </div>
+
+</article> `;
     }
 
     list.innerHTML =
@@ -553,9 +567,89 @@ async function loadAvailableSlots(){
                 availableSlots.map(slot => slot.id)
             );
 
-          const typeFilter = document.getElementById("slotTypeFilter").value;
+            const typeFilter =
+    document.getElementById("slotTypeFilter").value;
+
+const statusFilter =
+    document.getElementById("slotStatusFilter").value;
+
+          const filteredSlots = allSlots.filter(slot => {
+
+    const matchesType =
+        !typeFilter || slot.slotType === typeFilter;
+
+    let currentStatus = "AVAILABLE";
+
+    if(slot.status === "MAINTENANCE"){
+        currentStatus = "MAINTENANCE";
+    }
+    else if(!availableIds.has(slot.id)){
+        currentStatus = "BOOKED";
+    }
+
+    const matchesStatus =
+        !statusFilter || currentStatus === statusFilter;
+
+    return matchesType && matchesStatus;
+});
+
+const middle = Math.ceil(filteredSlots.length / 2);
+
+const firstRow = filteredSlots.slice(0, middle);
+const secondRow = filteredSlots.slice(middle);
+
+const renderSlot = slot => {
+
+    let status = "available";
+    let text = "AVAILABLE";
+
+    if(slot.status === "MAINTENANCE"){
+        status = "maintenance";
+        text = "MAINTENANCE";
+    }
+    else if(!availableIds.has(slot.id)){
+        status = "booked";
+        text = "BOOKED";
+    }
+
+    if(status === "available"){
+        return `
+            <button class="parking-slot ${status}"
+                onclick="selectParkingSlot(${slot.id}, '${escapeAttr(slot.slotNumber)}')">
+
+                <span class="slot-number">
+    ${escapeHtml(slot.slotNumber)}
+</span>
+
+<span class="slot-car">🚗</span>
+
+<span class="slot-type">
+    ${escapeHtml(slot.slotType)}
+</span>
+
+                <span class="slot-type">${text}</span>
+
+            </button>
+        `;
+    }
+
+   return `
+    <div class="parking-slot ${status}">
+        <span class="slot-number">
+            ${escapeHtml(slot.slotNumber)}
+        </span>
+
+        <span class="slot-car">🚗</span>
+
+        <span class="slot-type">
+            ${escapeHtml(slot.slotType)}
+        </span>
+
+        <span class="slot-type">${text}</span>
+    </div>
+`;
+};
           
-          const statusFilter = document.getElementById("slotStatusFilter").value;
           
           area.innerHTML = `
 
@@ -568,92 +662,23 @@ async function loadAvailableSlots(){
                 <div class="parking-entry">
                     ↓ ENTRY
                 </div>
-
                 <div class="parking-lanes">
 
-                    ${
-                      allSlots .filter(slot => {
-                        
-                        const matchesType = !typeFilter || slot.slotType === typeFilter;
-                        
-                        let currentStatus = "AVAILABLE";
-                        
-                        if(slot.status === "MAINTENANCE"){
-                          
-                          currentStatus = "MAINTENANCE";
-                        }
-                        
-                        else if(!availableIds.has(slot.id)){
-                          currentStatus = "BOOKED";
-                        }
-                        
-                        const matchesStatus = !statusFilter || currentStatus === statusFilter;
-                        
-                        return matchesType && matchesStatus;
-                      })
-                      .map(slot => {
-                            let status = "available";
-                            let text = "AVAILABLE";
+    <div class="parking-row">
+        ${firstRow.map(renderSlot).join("")}
+    </div>
 
-                            if(slot.status === "MAINTENANCE"){
+    <div class="driving-aisle">
+        <span>⬅</span>
+        DRIVE AISLE
+        <span>➡</span>
+    </div>
 
-                                status = "maintenance";
-                                text = "MAINTENANCE";
+    <div class="parking-row">
+        ${secondRow.map(renderSlot).join("")}
+    </div>
 
-                            }
-                            else if(!availableIds.has(slot.id)){
-
-                                status = "booked";
-                                text = "BOOKED";
-
-                            }
-
-
-                            if(status === "available"){
-                              return `
-                              
-                              <button class="parking-slot ${status}" onclick="selectParkingSlot( ${slot.id},'${escapeAttr(slot.slotNumber)}' )">
-                              <span class="slot-number">
-                              ${escapeHtml(slot.slotNumber)}
-                              </span>
-                              <span class="slot-type">
-                              ${escapeHtml(slot.slotType)}
-                              </span>
-
-                              <span class="slot-type">
-                              ${text}
-                              </span>
-
-                            </button>
-                             `;
-                           }
-
-
-                            return `
-                                <div
-                                    class="parking-slot ${status}">
-
-                                    <span class="slot-number">
-                                        ${escapeHtml(slot.slotNumber)}
-                                    </span>
-
-                                    <span class="slot-type">
-                                        ${escapeHtml(slot.slotType)}
-                                    </span>
-
-                                    <span class="slot-type">
-                                        ${text}
-                                    </span>
-
-                                </div>
-                            `;
-
-                        }).join("")
-
-                    }
-
-                </div>
-
+</div>
                 <div class="parking-exit">
                     EXIT ↓
                 </div>
@@ -1927,14 +1952,17 @@ document.addEventListener(
     loadParkingOccupancy();
     // ADD THIS HERE
     if(
-      document.getElementById("adminBookingList")
-    ){
+  document.getElementById("adminBookingList")
+){
 
-      if(!checkAdminAccess()){
-        return;
-      }
+  if(!checkAdminAccess()){
+    return;
+  }
 
-    }
+  adminBookingFilter = "ALL";
+  loadAdminBookings();
+
+}
 
 
     document
@@ -2674,7 +2702,7 @@ async function processPayment(){
             console.log("Payment API response:", result);
 
             console.log("Response type:", typeof result);
-            
+
         if(typeof result === "string" && result.startsWith("Payment successful")){
 
             localStorage.setItem(

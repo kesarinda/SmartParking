@@ -33,3 +33,4 @@ build/
 .vscode/
 # Local database configuration
 src/main/resources/application.properties
+tidb-truststore.p12
