@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "smartparking-v1";
+const CACHE_NAME = "smartparking-v2";
 
 const STATIC_FILES = [
   "/index.html",
