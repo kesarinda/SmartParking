@@ -1,4 +1,4 @@
-const API = "";
+const API = "https://smartparking-e4oq.onrender.com";
 let adminBookingFilter = "ALL";
 let selectedLotId = localStorage.getItem("selectedLotId");
 
